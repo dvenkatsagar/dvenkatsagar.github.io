@@ -14,11 +14,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="../lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -37,6 +37,8 @@
 		<!--[if lte IE 8]>
         <script src="excanvas.js"></script>
     <![endif]-->
+		<style>
+		</style>
 	</head>
 
 	<body>
@@ -45,27 +47,163 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-
+					<h1>Reveal-Chart</h1>
+					<h4>A plug-in that integrates chartjs with revealjs<h4>
 				</section>
 				<section>
-					<!-- Width and Height must be in pixels -->
-					<!--iframe style="width:300px; height:200px;" id="chart-frame" data-chart></iframe-->
+					<h2>Never heard of Reveal<h2>
+					<h4>check it out <a href="http://lab.hakim.se/reveal-js/#/">here</a></h4>
+				</section>
+				<section>
+					<h1>The plug-in</h1>
+					<iframe style="width:320px; height:210px;overflow:hidden;margin:10px 5px auto auto;" scrolling="no" id="chart-frame-0" data-chart></iframe>
+					<p>You can get it here:</p>
+					<p><a href="https://gitlab.com/dvenkatsagar/reveal-chart">https://gitlab.com/dvenkatsagar/reveal-chart</a><p>
+				</section>
+				<section>
+					<section>
+						<h2>Installation</h2>
+						<ul>
+							<li>Download repository and copy the "plugin" folder to the root of your presentation</li>
+							<li>In the Reveal.initialize function of your presentation, add these dependencies:</li>
+						</ul>
+						<pre><code class="javascript">Reveal.initialize({
+  dependencies : [
+    // Chartjs must be added first.
+    { src: 'plugin/chartjs/Chart.min.js'},
+    // the the plugin
+    { src: 'plugin/chartjs/charter.js'}
+  ]
+});						</code></pre>
+						<small>Note: Press down arrow for more</small>
+					</section>
+					<section>
+						<h1>Markup</h1>
+						<p>Step 1 : In the &lt;section&gt; tag, add an iframe in this format:</p>
+						<pre><code data-trim class="html">
+&lt;section&gt;
+ &lt;iframe id="some-selector" data-chart&gt;&lt;/iframe&gt;
+&lt;/section&gt;</code></pre>
+					</section>
+					<section>
+						<p>Step 2 : In the Reveal.initialize function, add an option "chart" like this:</p>
+						<pre><code class="javascript">Reveal.initialize({
+  chart : {
+    items : [
+      {
+        // selector must be iframe id,
+        selector : "#some-selector",
+        // type can be pie/doughtnut/line/bar/radar/polararea
+        type : "",
+        // The chart data can also be [], check chartjs docs
+        data : {},
+        // The chart options, check chartjs docs
+        options : {},
+        // optional
+        canvas : {
+          // width of iframe -> canvas element.
+          // default : 250px
+          width : "",
+          // height of iframe -> canvas element.
+          // default : 150px
+          height : ""
+        }
+      }
+    ]
+  }
+});
+						</code></pre>
+						<small>Note : "canvas" property in the "chart" option is optional.</small>
+					</section>
+					<section>
+						<h1>You're all set!!!</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Example : Line chart</h2>
+						<iframe style="overflow:hidden;margin:5px 5px auto auto;" class="stretch" scrolling="no" id="chart-frame-1" data-chart></iframe>
+						<small>Note : Press down arrow for more info</small>
+					</section>
+					<section>
+						<h3>Markup</h3>
+						<ul style="font-size:0.8em;">
+							<li>Step 1 : Installation and Markup step 1 are same. Check <a href="#/3">here</a>.</li>
+							<li>Step 2 : The javascript</li>
+						</ul>
+						<pre><code class="javascript">Reveal.initialize({
+  chart : {
+    // Taken from chartjs documentation
+    items : [
+      {
+        selector : "#chart-frame-1",
+        type : "line",
+        data : {
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [
+            {
+              label: "My First dataset",
+              fillColor: "rgba(220,220,220,0.2)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(220,220,220,1)",
+              data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+              label: "My Second dataset",
+              fillColor: "rgba(151,187,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(151,187,205,1)",
+              data: [28, 48, 40, 19, 86, 27, 90]
+            }
+          ]
+        },
+        options : {
+          responsive:true
+        }
+      }
+    ]
+  }
+});
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Example : Bar chart</h2>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" scrolling="no" id="chart-frame-2" data-chart></iframe>
+				</section>
+				<section>
+					<h2>Example : Radar chart</h2>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" scrolling="no" id="chart-frame-3" data-chart></iframe>
+				</section>
+				<section>
+					<h2>Example : Polar Area chart</h2>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" scrolling="no" id="chart-frame-4" data-chart></iframe>
+				</section>
+				<section>
+					<h2>Example : Pie chart</h2>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" scrolling="no" id="chart-frame-5" data-chart></iframe>
+				</section>
+				<section>
+					<h2>Example : Doughnut chart</h2>
+					<iframe style="overflow:hidden;margin:5px 5px auto auto;" scrolling="no" id="chart-frame-6" data-chart></iframe>
 				</section>
 			</div>
 		</div>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 		var items = [
 			{
-				selector : "#chart-frame",
-				type : "pie",
-				canvas :{
-					width : "250px",
-					height: "150px"
-				},
+				selector : "#chart-frame-0",
+				type : "doughnut",
 				data : [
 					{
 						value: 300,
@@ -86,7 +224,41 @@
 						label: "Yellow"
 					}
 				],
-				options : {}
+				options : {
+					responsive:true
+				}
+			},
+			{
+				selector : "#chart-frame-1",
+				type : "line",
+				data : {
+    			labels: ["January", "February", "March", "April", "May", "June", "July"],
+    			datasets: [
+        		{
+            	label: "My First dataset",
+            	fillColor: "rgba(220,220,220,0.2)",
+            	strokeColor: "rgba(220,220,220,1)",
+            	pointColor: "rgba(220,220,220,1)",
+            	pointStrokeColor: "#fff",
+            	pointHighlightFill: "#fff",
+            	pointHighlightStroke: "rgba(220,220,220,1)",
+            	data: [65, 59, 80, 81, 56, 55, 40]
+        		},
+        		{
+            	label: "My Second dataset",
+            	fillColor: "rgba(151,187,205,0.2)",
+            	strokeColor: "rgba(151,187,205,1)",
+            	pointColor: "rgba(151,187,205,1)",
+            	pointStrokeColor: "#fff",
+            	pointHighlightFill: "#fff",
+            	pointHighlightStroke: "rgba(151,187,205,1)",
+            	data: [28, 48, 40, 19, 86, 27, 90]
+        		}
+    			]
+				},
+				options : {
+					responsive:true
+				}
 			}
 		];
 			// Full list of configuration options available at:
@@ -96,6 +268,8 @@
 				progress: true,
 				history: true,
 				center: true,
+				slideNumber : true,
+				//previewLinks: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
@@ -110,7 +284,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'https://cdn.jsdelivr.net/chart.js/1.0.2/Chart.min.js'},
+					{ src: 'plugin/chartjs/Chart.min.js'},
 					{ src: 'plugin/chartjs/charter.js'}
 				]
 			});
