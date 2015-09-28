@@ -25,6 +25,12 @@
 		o.items = o.items || [];
 		for (var i = 0; i < o.items.length; i++){
 			o.items[i].canvas = o.items[i].canvas || {};
+			if(["line","bar","radar"].indexOf(o.items[i].type) > -1){
+				o.items[i].data = o.items[i].data || {};
+			}else{
+				o.items[i].data = o.items[i].data || [];
+			}
+			o.items[i].options = o.items[i].options || {};
 			o.items[i].canvas.width = o.items[i].canvas.width || "250px";
 			o.items[i].canvas.height = o.items[i].canvas.height || "150px";
 		}
