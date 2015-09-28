@@ -14,11 +14,11 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -45,17 +45,17 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<!-- Width and Height must be in pixels -->
-					<iframe style="width:300px; height:200px;" id="chart-frame" data-chart></iframe>
+
 				</section>
 				<section>
-					<iframe id="chart-frame1" style="width:300px; height:200px;" data-chart></iframe>
+					<!-- Width and Height must be in pixels -->
+					<!--iframe style="width:300px; height:200px;" id="chart-frame" data-chart></iframe-->
 				</section>
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
 
 		<script>
 		var items = [
@@ -87,33 +87,6 @@
 					}
 				],
 				options : {}
-			},
-			{
-				selector : "#chart-frame1",
-				type : "doughnut",
-				data : [
-					{
-						value: 300,
-						color:"#F7464A",
-						highlight: "#FF5A5E",
-						label: "Red"
-					},
-					{
-						value: 50,
-						color: "#46BFBD",
-						highlight: "#5AD3D1",
-						label: "Green"
-					},
-					{
-						value: 100,
-						color: "#FDB45C",
-						highlight: "#FFC870",
-						label: "Yellow"
-					}
-				],
-				options : {
-					percentageInnerCutout : 50
-				}
 			}
 		];
 			// Full list of configuration options available at:
@@ -122,7 +95,7 @@
 				controls: true,
 				progress: true,
 				history: true,
-				center: false,
+				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
