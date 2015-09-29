@@ -1,0 +1,40 @@
+#welcome-menu div {
+  font: bold 30px Arial;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  color: #42AFFA;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#welcome-menu div a:hover {
+  background: #484848;
+  padding: 15px 15px;
+  border-radius:5px;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #welcome-menu div{
+    font-size : 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #welcome-menu div{
+    font-size : 36px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #welcome-menu div{
+    font-size : 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+}
