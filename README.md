@@ -1,2 +1,0 @@
-# dvenkatsagar.github.io
-Homepage
