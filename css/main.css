@@ -1,40 +1,48 @@
-#welcome-menu div {
-  font: bold 30px Arial;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  cursor: pointer;
-  color: #42AFFA;
+body {
+  background: #111;
+  background-color: #111;
+}
+
+/* Main */
+.reveal .button{
+  margin-top: 10px;
+  font-family: Ubuntu, 'sans-serif';
+  font-weight: bold;
+  padding: 15px 20px;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+  background-color : rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
-#welcome-menu div a:hover {
-  background: #484848;
-  padding: 15px 15px;
-  border-radius:5px;
-  color: #fff;
-}
-
-@media (max-width: 767px) {
-  #welcome-menu div{
-    font-size : 36px;
-  }
+.reveal .button:hover {
+  padding: 15px 20px;
+  border-radius:10px;
+  color : white;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  #welcome-menu div{
-    font-size : 36px;
-  }
+.reveal [data-btn^="view-"] {
+  position:absolute;
+  right : 30px;
+  font-size: 1em;
+  z-index:50;
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  #welcome-menu div{
-    font-size : 30px;
-  }
+.reveal [data-btn="view-down"]{
+  bottom:30px;
 }
 
-@media (min-width: 1200px) {
+.reveal [data-btn="view-up"]{
+  top:30px;
+}
 
+.backgrounds {
+  opacity: 0.3;
+  background-size: auto 2100px
+}
+
+.hr-small{
+  width: 50%;
 }

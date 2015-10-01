@@ -13,11 +13,16 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Basic fonts -->
+		<link rel="stylesheet" href="lib/css/fonts.css">
+		<!-- Font Awesome fonts -->
 		<link rel="stylesheet" href="lib/css/font-awesome.min.css">
-		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="lib/css/bootstrap.css">
+		<!-- Reveal.js -->
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Reveal initial theme -->
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -34,65 +39,79 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<!-- Animate css -->
+		<link rel="stylesheet" href="lib/css/animate.min.css">
+		<!-- Custom css  -->
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/media.css">
 	</head>
 
 	<body>
 		<div class="reveal">
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section data-menu-title="Home" id="home">
 					<div class="row">
-						<h1 class="col-xs-12">Welcome</h1>
+						<div class="col-xs-12">
+							<h1 class="header">Welcome</h1>
+						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="welcome-menu">
-							<div class="col-xs-12 col-sm-4"><a href="">Home</a></div>
-							<div class="col-xs-12 col-sm-4"><a href="">Portfolio</a></div>
-							<div class="col-xs-12 col-sm-4"><a href="">Tutorials</a></div>
-							<div class="col-xs-12 col-sm-4"><a href="">Presentations</a></div>
-							<div class="col-xs-12 col-sm-4"><a href="">About This Site</a></div>
-							<div class="col-xs-12 col-sm-4"><a href="">Contact Me</a></div>
+						<div class="col-xs-12">
+							<a href="#" class="button" data-btn="menu"><i class="fa fa-bars fa-fw"></i> Menu</a>
 						</div>
 					</div>
 				</section>
+				<section id="portfolio">
+					<section data-menu-title="Portfolio" id="portfolio-home">
+						<div class="row">
+							<div class="col-xs-12">
+								<h2 class="header"><i class="fa fa-fw fa-user"></i> Portfolio</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="#" class="button" data-btn="menu"><i class="fa fa-bars fa-fw"></i> Goto</a>
+							</div>
+						</div>
+					</section>
+					<section data-menu-title="About Me" id="portfolio-aboutme">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3 class="header">About Me<hr class="hr-small"></h3>
+							</div>
+						</div>
+					</section>
+					<section data-menu-title="My Skills" id="portfolio-skills">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3 class="header">My Skills</h3>
+							</div>
+						</div>
+					</section>
+				</section>
+				<section data-menu-title="Tutorials" id="tuts">
+				</section>
+				<section data-menu-title="Presentations" id="prez">
+				</section>
+				<section data-menu-title="Projects" id="projects">
+				</section>
+				<section data-menu-title="Contact me" id="contact">
+				</section>
+			</div>
+			<div class="page-handle">
+				<a href="#" data-btn="view-up"><i class="fa fa-chevron-circle-up fa-fw"></i></a>
+				<a href="#" data-btn="view-down"><i class="fa fa-chevron-circle-down fa-fw"></i></a>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src='lib/js/jquery.min.js'></script>
+		<script src='lib/js/bootstrap.min.js'></script>
 		<script src="js/reveal.js"></script>
 
-		<script>
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: false,
-				history: true,
-				center: true,
-				width: 960,
-	 			height: 768,
-				margin: 0.1,
-				minScale : 0.75,
-				maxScale : 1.5,
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'lib/js/jeesh.min.js'},
-					{ src: 'lib/js/bowser.min.js'},
-					{ src: 'plugin/menu/menu.js'}
-				]
-			});
-
-		</script>
+		<script src="main.js"></script>
 
 	</body>
 </html>

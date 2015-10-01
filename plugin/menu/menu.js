@@ -11,8 +11,8 @@ var RevealMenu = window.RevealMenu || (function(){
 
 	var module = {};
 
-	//loadResource(options.path + '/jeesh.min.js', 'script', function() {
-	//loadResource(options.path + '/bowser.min.js', 'script', function() {
+	loadResource(options.path + '/jeesh.min.js', 'script', function() {
+	loadResource(options.path + '/bowser.min.js', 'script', function() {
 	loadResource(options.path + '/menu.css', 'stylesheet', function() {
 	//loadResource(options.path + '/font-awesome-4.3.0/css/font-awesome.min.css', 'stylesheet', function() {
 		// does not support IE8 or below
@@ -523,8 +523,8 @@ var RevealMenu = window.RevealMenu || (function(){
 			module.isOpen = isOpen;
 		}
 	//});
-	//});
-	//});
+	});
+	});
 });
 
 	// modified from math plugin
