@@ -23,19 +23,23 @@ body {
   color : white;
 }
 
-.reveal [data-btn^="view-"] {
+.reveal [data-btn^="nav-"] {
   position:absolute;
   right : 30px;
   font-size: 1em;
   z-index:50;
 }
 
-.reveal [data-btn="view-down"]{
+.reveal [data-btn="nav-down"], .reveal [data-btn="nav-top"]{
   bottom:30px;
 }
 
-.reveal [data-btn="view-up"]{
+.reveal [data-btn="nav-up"]{
   top:30px;
+}
+
+.reveal [data-btn="nav-top"]{
+  display:none;
 }
 
 .backgrounds {
