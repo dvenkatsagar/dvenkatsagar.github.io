@@ -65,7 +65,9 @@
 						</ul>
 						<pre><code class="javascript">Reveal.initialize({
   dependencies : [
-    // the the plugin
+    // Chart.min.js
+    { src: 'plugin/chartjs/Chart.min.js'},
+    // the plugin
     { src: 'plugin/chartjs/charted.js'}
   ]
 });						</code></pre>
@@ -233,7 +235,7 @@
     // Taken from chartjs documentation
     items : [
       {
-        selector : "#chart-frame-2",
+        selector : "#chart-frame-3",
         type : "bar",
         data : {
           labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
@@ -395,7 +397,7 @@
     // Taken from chartjs documentation
     items : [
     {
-      selector : "#chart-frame-5",
+      selector : "#chart-frame-6",
       type : "doughnut",
       data : [
         {
@@ -698,7 +700,6 @@
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				chart : {
-					path : "../plugin/chartjs/Chart.min.js",
 					items : items
 				},
 				// Optional reveal.js plugins
@@ -709,12 +710,10 @@
 					{ src: '../plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: '../plugin/zoom-js/zoom.js', async: true },
 					{ src: '../plugin/notes/notes.js', async: true },
-					{ src: '../plugin/chartjs/charted.js',async:false}
+					{ src: '../plugin/chartjs/Chart.min.js'},
+					{ src: '../plugin/chartjs/charted.js'}
 				]
 			});
-			setTimeout(function(){
-				console.log(RevealChart);
-			},1000);
 
 			</script>
 	</body>

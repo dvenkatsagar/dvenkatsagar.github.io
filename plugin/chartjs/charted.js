@@ -55,81 +55,60 @@ var RevealChart = window.RevealChart || (function(){
 
 	// Load chart into iframe
 	var loadChart = function(event){
+
+		function loading(e){
+			// remove event listener after loading to that it doesnt fire multiple times
+			e.target.removeEventListener("load",loading,false);
+			// get id of frame
+			var id = e.target.getAttribute("id").replace(/-/g,"_").toString();
+
+			// create charts object with id as property
+			module[id] = {};
+
+			// get iframe document
+			module[id].doc = e.target.contentDocument || e.target.contentWindow.document;
+
+			// write empty canvas as iframe contents
+			module[id].doc.open();
+			module[id].doc.write('<html><body><canvas></canvas></body></html>');
+			module[id].doc.close();
+
+			// get iframe canvas
+			module[id].canvas = module[id].doc.querySelector("canvas");
+
+			// get canvas context
+			module[id].ctx = module[id].canvas.getContext("2d");
+
+			// create new chart with context
+			module[id].item = new Chart(module[id].ctx);
+
+			// get the appropriate item data
+			var optitem = getOptItem(options,e.target.getAttribute("id"));
+
+			if (optitem != null){
+				// change canvas size
+				module[id].canvas.style.width = optitem.canvas.width;
+				module[id].canvas.style.height = optitem.canvas.height;
+
+				// plot chart
+				plotChart(optitem,id);
+			}
+		}
+
 		// Get all iframes
 		var iframes = event.currentSlide.querySelectorAll("iframe");
 		for (var i = 0; i < iframes.length; i++ ){
-
 			// check if iframe has data-chart attribute
 			if (iframes[i].hasAttribute("data-chart")){
-
 				// load a blank page into iframe
-				iframes[i].src = "about:blank";
-				iframes[i].addEventListener("load",function load(e){
-
-					// remove event listener after loading to that it doesnt fire multiple times
-					e.target.removeEventListener("load",load,false);
-
-					// get id of frame
-					var id = e.target.getAttribute("id").replace(/-/g,"_").toString();
-
-					// create charts object with id as property
-					module[id] = {};
-
-					// get iframe document
-					module[id].doc = e.target.contentDocument || e.target.contentWindow.document;
-
-					// write empty canvas as iframe contents
-					module[id].doc.open();
-					module[id].doc.write('<canvas></canvas>');
-					module[id].doc.close();
-
-					// get iframe canvas
-					module[id].canvas = module[id].doc.querySelector("canvas");
-
-					// get canvas context
-					module[id].ctx = module[id].canvas.getContext("2d");
-
-					// create new chart with context
-					module[id].item = new Chart(module[id].ctx);
-
-					// get the appropriate item data
-					var optitem = getOptItem(options,e.target.getAttribute("id"));
-
-					if (optitem != null){
-						// change canvas size
-						module[id].canvas.style.width = optitem.canvas.width;
-						module[id].canvas.style.height = optitem.canvas.height;
-
-						// plot chart
-						plotChart(optitem,id);
-					}
-				},false);
+				iframes[i].src = "";
+				iframes[i].srcdoc = "";
+				if(iframes[i].addEventListener)
+					iframes[i].addEventListener('load',loading);
+				else if(iframe.attachEvent)
+					iframes[i].attachEvent('onload',loading);
 			}
 		}
-	}
-
-	function loadScript( url, callback ) {
-		var head = document.querySelector( 'head' );
-		var script = document.createElement( 'script' );
-		script.type = 'text/javascript';
-		script.src = url;
-
-		// Wrapper for callback to make sure it only fires once
-		var finish = function() {
-			if( typeof callback === 'function' ) {
-				callback.call();
-				callback = null;
-			}
-		}
-		script.onload = finish;
-		// IE
-		script.onreadystatechange = function() {
-			if ( this.readyState === 'loaded' ) {
-				finish();
-			}
-		}
-		// Normal browsers
-		head.appendChild( script );
 	}
 
 	// main
@@ -150,13 +129,11 @@ var RevealChart = window.RevealChart || (function(){
 		options.items[i].canvas.height = options.items[i].canvas.height || "150px";
 	}
 
-	loadScript( options.path, function() {
-		Reveal.addEventListener("ready", function(event){
-			loadChart(event);
-			Reveal.addEventListener("slidechanged", loadChart,false);
-		},false);
-		Chart = window.Chart || Chart;
-	});
-
+		Reveal.addEventListener('ready', function(e1){
+			loadChart(e1);
+			Reveal.addEventListener('slidechanged', function(e2){
+				loadChart(e2)
+			});
+		});
 	return module;
 })();
