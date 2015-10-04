@@ -9,10 +9,10 @@ layout: default
   {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
 {% endif %}
 
-<div class="container-fluid single">
-  <div class="row">
+<div class="pure-g single">
+  <div class="pure-u-1">
 
-    <div itemscope itemtype="http://schema.org/Article" class="col-md-12 article">
+    <div itemscope itemtype="http://schema.org/Article" class="pure-u-1 article">
       {% if site.data.thumbnail[page.thumbnail] %}
       <div class="thumb">
         <img itemprop="image" src="{{ site.data.thumbnail[page.thumbnail] }}" alt="Thumbnail: {{ page.thumbnail }}" />

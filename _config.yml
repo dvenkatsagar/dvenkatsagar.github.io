@@ -4,24 +4,18 @@ email: dvenkatsagar@gmail.com
 description: "STILL UNDER CONSTRUCTION. THEME TAKEN : jekyll - Carte-noire"
 baseurl: ""
 url: "https://dvenkatsagar.github.io"
-title_description: "Welcome to my blog. This site is still underconstruction. Please come back later."
-title_image: ""
+title_description: "Welcome to my blog. This site is still under construction. Please come back later."
 google_analytics: ""
-disqus_account: dvenkatsagar
+disqus_account: dvenkatsagar-github
 github_repository: https://github.com/dvenkatsagar/dvenkatsagar.github.io
-addthis_id: ""
-post_limit: 5
+post_limit: 3
 
 # Social usernames/URLs
-#twitter_username: ""
-github_username:  dvenkatsagar
+twitter_username: "dvenkatsagar"
+facebook_username: dvenkatsagar
+git_username:  dvenkatsagar
 linkedin_link: http://www.linkedin.com/dvenkatsagar
-#google_plus_link: ""
-#stackoverflow_link: ""
-
-# Footer
-footer_left: "<p style='text-align:center;'>Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://github.com/dvenkatsagar\">Sagar DV</a></p>"
-#footer_right: "&lt;/&gt; on <a href=\"\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
+google_plus_link: "https://plus.google.com/+SagarDwibhashyam"
 
 # Build settings
 markdown: redcarpet
