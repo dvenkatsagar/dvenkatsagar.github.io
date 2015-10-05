@@ -55,13 +55,6 @@ layout: default
       <div class="content-panel content">
         <span itemprop="articleBody">{{ content }}</span>
 
-        {% if site.addthis_id %}
-        <div class="share">
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          <div class="addthis_sharing_toolbox"></div>
-        </div>
-        {% endif %}
-
         {% if page.tags and page.tags.size > 0 %}
         <div class="tags">
           <small>
