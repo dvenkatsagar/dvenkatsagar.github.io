@@ -9,7 +9,7 @@ layout: default
   {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
 {% endif %}
 
-<div class="pure-g single">
+<div class="pure-g single-post">
   <div class="pure-u-1">
 
     <div itemscope itemtype="http://schema.org/Article" class="pure-u-1 article">
@@ -80,7 +80,7 @@ layout: default
       </div>
       {% endif %}
 
-      <div class="content-panel related clearfix">
+      <div class="content-panel related">
         {% for post in site.related_posts limit:1 %}
         <div class="related-header">
           <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>

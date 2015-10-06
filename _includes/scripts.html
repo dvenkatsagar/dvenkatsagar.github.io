@@ -29,20 +29,23 @@ $(document).ready(function( $ ) {
         {
            "position": "bottom",
            "content": [
-             "<label>Contact me via:</label>",
-             '{% if site.facebook_username %}<a href="https://www.facebook.com/{{ site.facebook_username }}" target="_new"><i class="fa fa-lg fa-facebook-square"></i></a>{% endif %}',
-             '{% if site.twitter_username %}<a href="http://www.twitter.com/{{ site.twitter_username }}" target="_new"><i class="fa fa-lg fa-twitter-square"></i></a>{% endif %}',
-             '{% if site.linkedin_link %}<a href="{{ site.linkedin_link }}" target="_new"><i class="fa fa-lg fa-linkedin-square"></i></a>{% endif %}',
-             '{% if site.google_plus_link %}<a href="{{ site.google_plus_link }}" target="_new"><i class="fa fa-lg fa-google-plus-square"></i></a>{% endif %}',
-             '{% if site.git_username %}<a href="https://gitlab.com/{{ site.git_username }}" target="_new"><i class="fa fa-lg fa-git-square"></i></a>{% endif %}',
-             '{% if site.stackoverflow_link %}<a href="{{ site.stackoverflow_link }}" target="_new"><i class="fa fa-lg fa-stack-overflow"></i></a>{% endif %}',
-             '<a href="{{ site.baseurl }}/feed.xml" target="_new"><i class="fa fa-lg fa-rss-square"></i></a>'
+             '<label><i class="fa fa-copyright"></i> Sagar D.V 2012-2015</label>'
            ]
-        },
+        }
      ]
   },{
   });
 
+  $("#search-input").val("");
+  $("#search-input").off("input").on("input",function(){
+    if($(this).val().length != 0 ){
+      $("#results-list").show();
+      $("#archive-list").hide();
+    }else if ($(this).val().length == 0) {
+      $("#results-list").hide();
+      $("#archive-list").show();
+    }
+  });
 });
 </script>
 

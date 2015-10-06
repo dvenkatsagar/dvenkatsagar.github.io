@@ -29,15 +29,15 @@ $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 
-/* Globals */
+/* Main CSS */
 
+/* Document */
 html {
 	overflow-x: hidden;
 }
 
 body {
 	font-family: 'Ubuntu', serif;
-	font-weight: 300;
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../lib/bgs/w3.jpg");
 	background-image: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../lib/bgs/w3.jpg");
 	background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../lib/bgs/w3.jpg");
@@ -46,6 +46,57 @@ body {
 	background-repeat: repeat;
 }
 
+/* Page */
+.page-header
+{
+	height:10em;
+	width:100%;
+
+	.menu-button {
+		color: $white;
+		font-size: 1.5em;
+		position: absolute;
+		top: 1.5em;
+		left: 1.5em;
+		cursor: pointer;
+		line-height: 1em;
+		padding: 10px 15px;
+		background-color: $dark;
+		z-index: 999;
+	}
+
+	.menu-button:hover{
+		color: $light-blue;
+	}
+}
+
+.page-footer {
+	font-size:0.8em;
+	font-weight: normal;
+
+	.copyright{
+		-webkit-animation-iteration-count : 1;
+		-moz-animation-iteration-count : 1;
+		-o-animation-iteration-count : 1;
+		animation-iteration-count : 1;
+
+		-webkit-animation-delay : 1s;
+		-moz-animation-delay : 1s;
+		-o-animation-delay : 1s;
+		animation-delay : 1s;
+
+		-webkit-animation-duration: 1s;
+		-moz-animation-duration : 1s;
+		-o-animation-duration : 1s;
+		animation-duration : 1s;
+
+		p{
+			text-align:center;
+		}
+	}
+}
+
+/* Global */
 a, a:active {
 	text-decoration: none;
 }
@@ -56,40 +107,13 @@ a:hover {
 
 ul {
     list-style-type: none;
-}
-
-.clearfix:after {
-   content: " ";
-   display: block;
-   clear: both;
+		margin:0;
+		padding:0;
 }
 
 .header {
 	font-size: 3em;
 	text-align: center;
-}
-
-.menu-button {
-	color: $white;
-	font-size: 1.5em;
-	position: absolute;
-	top: 1.5em;
-	left: 1.5em;
-	cursor: pointer;
-	line-height: 1em;
-	padding: 10px 15px;
-	background-color: $dark;
-	z-index: 999;
-}
-
-.menu-button:hover{
-	color: $light-blue;
-}
-
-.page-header
-{
-	height:10em;
-	width:100%;
 }
 
 .content-panel {
@@ -98,6 +122,21 @@ ul {
 	border-bottom: 5px solid $light-blue;
 	border-radius: 5px;
 	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.articles{
+	text-align:center;
+	ul{
+		li {
+			margin:1em auto;
+			a{
+				font-size: 1.2em;
+			}
+			small {
+				font-size: 1em;
+			}
+		}
+	}
 }
 
 .links {
@@ -139,11 +178,12 @@ ul {
 	.fa-rss-square:hover {
 		color: $rss;
 	}
-
 }
 
-#side-menu{
 
+/* Side menu */
+
+#side-menu{
 	font-weight: bold;
 	font-family: 'Ubuntu',sans-serif;
 	z-index:500;
@@ -160,12 +200,7 @@ ul {
 		background-color: #2e2e2e;
 	}
 	.mm-navbar-bottom-1{
-		label{
-			margin-left: 1.5em;
-		}
-		a {
-			margin:auto 0.4em;
-		}
+		z-index:300;
 	}
 }
 
@@ -178,13 +213,9 @@ ul {
 	position:fixed;
 }
 
-/* Index */
 
-.index {
-	.header {
-		margin : 0.5em auto 0.2em;
-	}
-
+/* Home page */
+#home {
 	.pure-g:first-child .content-panel {
 		border-bottom: 0.5em solid $light-blue;
 		margin-bottom: 2em;
@@ -199,16 +230,15 @@ ul {
 	}
 
 	.author-text {
-		text-align: justify;
-		font-size:1em;
-		margin:auto 1em 2em;
+		text-align: center;
+		font-size:1.2em;
+		margin:auto auto 2em;
 	}
 
 	.gravatar {
-		position:relative;
-		text-align: center;
-		margin:-5em auto auto;
-
+		margin-top:-5em;
+		width:inherit;
+		height:auto;
 		@keyframes gravatarFadeInOut {
 		  0% {
 		    opacity:1;
@@ -229,7 +259,8 @@ ul {
 
 		img {
 			position:absolute;
-			left:3em;
+			width:inherit;
+			height:auto;
   		-webkit-transition: opacity 1s ease-in-out;
   		-moz-transition: opacity 1s ease-in-out;
   		-o-transition: opacity 1s ease-in-out;
@@ -284,101 +315,26 @@ ul {
 		-webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-		border-bottom: 5px solid $light-blue;
 	}
 
-	.links {
-		font-size: 2em;
+	.articles{
 	}
-
-	.articles {
-		text-align: center;
-		h2 {
-			color: $light-blue;
-			font-size: 26px;
-		}
-
-		ul {
-			padding: 0px;
-
-			li {
-				font-size: 24px;
-
-				a:hover {
-					color: $light-medium;
-				}
-
-				small {
-					font-size: 14px;
-					color: $light-medium;
-				}
-
-			}
-
-			li:nth-last-of-type(1) {
-
-				small {
-					font-size: 16px;
-				}
-
-			}
-		}
-
-		a, a:active {
-			color: $white;
-		}
-
-		a:hover {
-			color: $light-blue;
-		}
-
-		li p{
-			font-size: 0.8em;
-		}
-	}
-
-	.copyright {
-		text-align: center;
-	}
-
-	.links {
-		a, a:active {
-			color: #FFFFFF;
-		}
-	}
-
-	.menu {
-		font-size: 20px;
-		position: absolute;
-
-		a, a:active {
-			color: #FFFFFF;
-		}
-
-		a:hover {
-			color: $light-blue;
-		}
-
-		ul {
-
-			ul {
-				list-style: none;
-				text-indent: -0.6em;
-			}
-		}
-	}
-
 }
 
-.archive {
+
+/* Archive page */
+#archive {
+
 	#search-input {
 		color:$dark;
 		background-color:$white;
 		border:1px solid #adc5cf;
-		margin-bottom: 0;
+	}
+	#results-list{
+		display:none;
+		padding:1em;
 	}
 }
-
 
 .single {
 	h1, h2, h3, h4, h5, h6 {
@@ -393,7 +349,11 @@ ul {
 		font-size: 28px;
 	}
 
-	p {}
+	p {
+
+		@media (min-width: $screen-sm-min) {
+		}
+	}
 
 	.menu {
 
@@ -434,6 +394,7 @@ ul {
 	}
 
 	.article {
+
 		.thumb {
 			text-align: center;
 		}
@@ -447,11 +408,17 @@ ul {
 			font-size: 16px;
 			text-align: center;
 			font-weight: 400;
+			@media (min-width: $screen-sm-min) {
+			}
 		}
 
 		.content {
-			font-size: 1em;
-			line-height: 1em;
+			font-size: 18px;
+			line-height: 170%;
+
+			@media (min-width: $screen-sm-min) {
+				font-size: 24px;
+			}
 
 			img {
     		display: block;
@@ -468,6 +435,9 @@ ul {
 				box-sizing: content-box;
 				border: none;
 				font-size: 28px;
+
+				@media (min-width: $screen-sm-min) {
+				}
 
 				p {
 					z-index: 0;
@@ -505,6 +475,10 @@ ul {
 					border: none;
 					box-sizing: content-box;
 					border-radius: 0;
+
+					@media (min-width: $screen-sm-min) {
+						font-size: 15px;
+					}
 				}
 			}
 
@@ -625,18 +599,5 @@ ul {
 
 	.links {
 		font-size: 1em;
-	}
-}
-
-.footer {
-	font-size:1em;
-	font-weight: normal;
-	p{text-align:center;}
-	.fa-heart {
-		color: $red;
-	}
-
-	div {
-		color: $light-medium;
 	}
 }
