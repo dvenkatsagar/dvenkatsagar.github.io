@@ -1,3 +1,13 @@
 <div class="page-header">
-<a class="menu-button" href="#side-menu"><i class="fa fa-bars"></i></a>
+  <label class="menu-button"><i class="fa fa-bars"></i></label>
+  <nav id="side-menu">
+    <ul class="nav">
+      <li {% if page.nav == 'home' %} class="active" {% endif %} ><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i> <span>Home</span></a></li>
+      <li {% if page.nav == 'portfolio' %} class="active" {% endif %} ><a href="{{ site.baseurl }}/portfolio/"><i class="fa fa-book"></i> <span>Portfolio</span></a></li>
+      {% assign array = "blog|projects|presentations|tutorials|posts" | split: "|" %}
+      <li {% if array contains page.nav %} class="active" {% endif %} ><a href="{{ site.baseurl }}/blog/"><i class="fa fa-newspaper-o"></i> <span>Blog</span></a></li>
+      <li {% if page.nav == 'archive' %} class="active" {% endif %} ><a href="{{ site.baseurl }}/archive/"><i class="fa fa-archive"></i> <span>Archive</span></a></li>
+      <li {% if page.nav == 'contact' %} class="active" {% endif %} ><a href="{{ site.baseurl }}/contact/"><i class="fa fa-user"></i> <span>Contact Me</span></a></li>
+    </ul>
+  </nav>
 </div>

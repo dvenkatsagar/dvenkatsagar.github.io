@@ -321,8 +321,11 @@ li.mm-vertical.mm-opened > .mm-panel {
 
 .mm-slideout {
   -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
   -ms-transition: -ms-transform 0.4s ease;
-  transition: transform 0.4s ease; }
+  transition: transform 0.4s ease;
+}
 
 html.mm-opened {
   overflow-x: hidden;
@@ -1226,7 +1229,7 @@ html.mm-pagedim #mm-blocker, html.mm-pagedim-white #mm-blocker, html.mm-pagedim-
   opacity: 0; }
 html.mm-pagedim.mm-opening #mm-blocker, html.mm-pagedim-white.mm-opening #mm-blocker, html.mm-pagedim-black.mm-opening #mm-blocker {
   opacity: 0.3;
-  transition: opacity 0.4s ease 0.4s; }
+  transition: opacity 0.5s ease 0.5s; }
 html.mm-pagedim #mm-blocker {
   background: inherit; }
 html.mm-pagedim-white #mm-blocker {

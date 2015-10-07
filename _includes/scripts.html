@@ -1,54 +1,8 @@
 <script src="{{ site.baseurl }}/lib/js/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/lib/js/jquery.mmenu.min.all.js"></script>
 <script src="{{ site.baseurl }}/lib/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
-$(document).ready(function( $ ) {
-  $("#side-menu").mmenu({
-     "extensions": [
-        null,
-        "border-full",
-        "effect-panels-slide-0",
-        "theme-dark"
-     ],
-     "navbars": [
-        {
-           "position": "top",
-           "content": [
-              "searchfield"
-           ]
-        },
-        {
-           "position": "top",
-           "content": [
-              "prev",
-              "title",
-              "close"
-           ]
-        },
-        {
-           "position": "bottom",
-           "content": [
-             '<label><i class="fa fa-copyright"></i> Sagar D.V 2012-2015</label>'
-           ]
-        }
-     ]
-  },{
-  });
 
-  $("#search-input").val("");
-  $("#search-input").off("input").on("input",function(){
-    if($(this).val().length != 0 ){
-      $("#results-list").show();
-      $("#archive-list").hide();
-    }else if ($(this).val().length == 0) {
-      $("#results-list").hide();
-      $("#archive-list").show();
-    }
-  });
-});
-</script>
-
+<script src="{{ site.baseurl }}/js/main.js"></script>
 {% if site.google_analytics %}
 <script type="text/javascript">
   var _gaq = _gaq || [];
