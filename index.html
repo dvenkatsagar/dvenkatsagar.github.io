@@ -1,42 +1,91 @@
 ---
 layout: default
 title: Welcome
-description: |
-  Welcome to my blog. This site is still under construction. Im still in progress of uploading the posts. So please come back later.
 nav: home
+thumbnail: home
 ---
 
-<div class="index" id="home">
-  <div class="pure-g" id="welcome">
-    <div class="pure-u-1-4">&nbsp;</div>
-    <div class="pure-u-1-2 content-panel animated fadeInDown">
-      <div class="pure-g">
-        <!--div class="pure-u-5-12">&nbsp;</div>
-        <div class="pure-u-1-6">
-          <div class="gravatar">
-            <img src="lib/media/me/me1.png" class="img-circle about-image" alt="{{ site.title }}" />
-            <img src="lib/media/me/me2.png" class="img-circle about-image" alt="{{ site.title }}" />
-            <img src="lib/media/me/me3.png" class="img-circle about-image" alt="{{ site.title }}" />
-            <img src="lib/media/me/me.jpg" class="img-circle about-image" alt="{{ site.title }}" />
+<div class="pure-g" id="home">
+  <div class="pure-u-1-4">&nbsp;</div>
+  <div class="pure-u-1-2">
+    <div class="pure-g article-header animated fadeInDown" id="welcome">
+      <div class="pure-u-1">
+        {% if site.data.thumbnail[page.thumbnail] %}
+        <div class="thumb">
+          <img src="{{ site.data.thumbnail[page.thumbnail] }}" alt="Thumbnail: {{ page.thumbnail }}" />
+        </div>
+        {% elsif page.thumbnail %}
+        <div class="thumb">
+          <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
+        </div>
+        {% endif %}
+      </div>
+      <h1 class="header pure-u-1">{{ page.title }}</h1>
+      <div class="pure-u-1 description" style="color:red;">
+        <p>Welcome to my blog. This site is still under construction. Im still in progress of uploading the posts. So please come back later.</p>
+      </div>
+    </div>
+    <div class="pure-g animated fadeIn" id="carousel">
+      <div class="pure-u-1 content-panel">
+        <div class="carousel">
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1>Hi, I'm Sagar</h1>
+                <h3>A Developer/Web Designer</h3>
+                <p>and so much more...</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="pure-u-5-12">&nbsp;</div-->
-        <div class="pure-u-1">
-          <h1 class="header">{{ page.title }}</h1>
-        </div>
-        <div class="pure-u-1">
-          <div class="description">
-            {{ page.description }}
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1>What I do?</h1>
+                <h3>Write small codes that can do amazing things.</h3>
+                <p>Also doing my Masters in Computers and Information Sciences at Florida State University.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1>Where I'm based?</h1>
+                <h3>I currently live in Tallahassee, Florida</h3>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1>My <a href="{{ site.baseurl }}/portfolio/">Portfolio</a></h1>
+                <h3>You'll mostly get to know who I am.</h3>
+                <p>If you'd like, check it out.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1>My <a href="{{ site.baseurl }}/blog/">Blog</a></h1>
+                <h3>I love to learn something new and would like share that knowledge to the world.</h3>
+                <p>You might find something interesting in here.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <h1><a href="{{ site.baseurl }}/contact/">Contact me</a></h1>
+                <h3>If you want to know more about me.</h3>
+                <p>Just click the link.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="pure-u-1-4">&nbsp;</div>
-  </div>
-  <div class="pure-g" id="latest-articles">
-    <div class="pure-u-1-4">&nbsp;</div>
-    <div class="pure-u-1-2 content-panel animated fadeInUp">
-      <div class="pure-g">
+    <div class="pure-g" id="latest-articles">
+      <div class="content-panel animated fadeInUp">
         <div class="articles">
           <div class="pure-u-1">
             <h2 class="header">Latest Articles</h2>
@@ -61,6 +110,6 @@ nav: home
         </div>
       </div>
     </div>
-    <div class="pure-u-1-4">&nbsp;</div>
   </div>
+  <div class="pure-u-1-4">&nbsp;</div>
 </div>

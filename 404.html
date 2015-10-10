@@ -4,45 +4,46 @@ title: 404
 permalink: /404.html
 ---
 
-<div class="index error" id="404">
-  <div class="pure-g">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-2 content-panel articles">
-      <h2 class="header">404</h2>
-      <div class="error-text">
-        Sorry but this page doesn't seem to exist.
+<div class="pure-g" id="not-found">
+  <div class="pure-u-1-4">&nbsp;</div>
+  <div class="pure-u-1-2 content-panel articles">
+    <div class="pure-g">
+      <h2 class="header pure-u-1">404</h2>
+      <div class="error-text pure-u-1">
+        <p>Sorry but this page doesn't seem to exist.</p>
       </div>
-
-      <div class="error-text">
+      <div class="menu-links pure-u-1">
         <a href="{{ site.baseurl }}/">Home</a> |
-        <a href="{{ site.baseurl }}/archive/">Archive</a>
+        <a href="{{ site.baseurl }}/archive/">Archive</a> |
+        <a href="{{ site.baseurl }}/contact/">Contact me</a>
       </div>
-
-      <!--{% include social_links.html %}-->
-
     </div>
-    <div class="pure-u-1-4"></div>
   </div>
-  <div class="pure-g">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-1-2 content-panel related">
-      {% for post in site.posts limit:1 %}
-        <div class="related-header">
-          <a href="{{ site.baseurl }}{{ post.url }}">Suggested Article</a>
-        </div>
-        <div class="title">
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </div>
-        <div class="excerpt">
-          {% if post.summary %}
-            {{ post.summary | strip_html | truncatewords:30 }}
-          {% else %}
-            {{ post.excerpt | strip_html | truncatewords:30 }}
-          {% endif %}
-          <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
-        </div>
-      {% endfor %}
+  <div class="pure-u-1-4">&nbsp;</div>
+</div>
+
+<div class="pure-g related-posts">
+  <div class="pure-u-1-4">&nbsp;</div>
+  <div class="pure-u-1-2 content-panel">
+
+    {% for post in site.posts limit:1 %}
+    <div class="pure-g">
+      <div class="related-header pure-u-1">
+        <a href="{{ site.baseurl }}{{ post.url }}">Suggested Article</a>
+      </div>
+      <div class="related-title pure-u-1">
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </div>
+      <div class="excerpt pure-u-1">
+        {% if post.summary %}
+          {{ post.summary | strip_html | truncatewords:30 }}
+        {% else %}
+          {{ post.excerpt | strip_html | truncatewords:30 }}
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
+      </div>
     </div>
-    <div class="pure-u-1-4"></div>
+    {% endfor %}
   </div>
+  <div class="pure-u-1-4">&nbsp;</div>
 </div>

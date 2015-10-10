@@ -74,7 +74,7 @@ This allows your content to have the proper informational and contextual hierarc
 
 ### Images look great, too
 
-<div class="article-image"><img src="http://i.imgur.com/DMCHDqF.jpg"></div>
+<img class="article-image" src="http://i.imgur.com/DMCHDqF.jpg" />
 
 ### Stylish blockquotes included
 

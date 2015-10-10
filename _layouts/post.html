@@ -9,73 +9,63 @@ layout: default
   {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
 {% endif %}
 
-<div class="single-post">
-  <div class="article">
+<div id="post">
+  <div class="single-post">
     <div class="pure-g">
       <div class="pure-u-1-4">&nbsp;</div>
-      <div class="pure-u-1-2 article-header">
+      <div class="pure-u-1-2">
         <div class="pure-g">
-          <div class="pure-u-1">
-            {% if site.data.thumbnail[page.thumbnail] %}
-            <div class="thumb">
-              <img src="{{ site.data.thumbnail[page.thumbnail] }}" alt="Thumbnail: {{ page.thumbnail }}" />
-            </div>
-            {% elsif page.thumbnail %}
-            <div class="thumb">
-              <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
-            </div>
-            {% endif %}
-          </div>
-          <div class="pure-u-1">
-            <h1 class="header">{{ page.title }}</h1>
-          </div>
-          <div class="pure-u-1">
-            <div class="author-details">
-              <small class="author-details">
-                <i>
-                  {% if page.author %}
-                  by
-                  <span class="author">
-                    {% if site.google_plus_link %}
-                    <a href="{{ site.google_plus_link }}">
-                    {% endif %}
-                      {{ page.author }}
-                    {% if site.google_plus_link %}
-                    </a>
-                    {% endif %}
-                  </span>
-                  {% endif %}
-                  on {{ page.date | date: "%B %-d, %Y" }}
-                  {% if page.categories != empty %} under {% for category in page.categories limit:1 %}{{ category }}{% endfor %}{% endif %}
-                </i>
-              </small>
-            </div>
-          </div>
-          <div class="pure-u-1">
-            <div class="read-time">
-              <small>
-                {{ minutes }} minute read
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-1-4">&nbsp;</div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1-4">&nbsp;</div>
-      <div class="pure-u-1-2 content-panel">
-        <div class="article-content">
-          <div class="pure-g">
+          <div class="article-header">
             <div class="pure-u-1">
+              {% if site.data.thumbnail[page.thumbnail] %}
+              <div class="thumb">
+                <img src="{{ site.data.thumbnail[page.thumbnail] }}" alt="Thumbnail: {{ page.thumbnail }}" />
+              </div>
+              {% elsif page.thumbnail %}
+              <div class="thumb">
+                <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
+              </div>
+              {% endif %}
+            </div>
+            <div class="pure-u-1">
+              <h1 class="header">{{ page.title }}</h1>
+            </div>
+            <div class="pure-u-1">
+              <div class="author-details">
+                <small>
+                  <i>
+                    {% if page.author %}
+                    by
+                    <span class="author">
+                      {% if site.google_plus_link %}
+                      <a href="{{ site.google_plus_link }}">
+                      {% endif %}
+                        {{ page.author }}
+                      {% if site.google_plus_link %}
+                      </a>
+                      {% endif %}
+                    </span>
+                    {% endif %}
+                    on {{ page.date | date: "%B %-d, %Y" }}
+                    {% if page.categories != empty %} under {% for category in page.categories limit:1 %}{{ category }}{% endfor %}{% endif %}
+                  </i>
+                </small>
+              </div>
+            </div>
+            <div class="pure-u-1">
+              <div class="read-time">
+                <small>
+                  {{ minutes }} minute read
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="pure-u-1 content-panel">
+            <div class="article-content">
               {{ content }}
             </div>
-          </div>
-        </div>
-        {% if page.tags and page.tags.size > 0 %}
-        <div class="article-footer">
-          <div class="pure-g">
-            <div class="pure-u-1">
+            {% if page.tags and page.tags.size > 0 %}
+            <div class="article-footer">
               <div class="tags">
                 <small>
                   <i class="fa fa-tags"></i>
@@ -83,86 +73,79 @@ layout: default
                 </small>
               </div>
             </div>
+            {% endif %}
           </div>
+        </div>
+        <div class="pure-g feedback">
+          <div class="pure-u-1 content-panel">
+            <p>I <i class="fa fa-heart"></i> feedback.</p>
+            <p>Let me know what you think of this article on twitter <a href="http://www.twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a> or leave a comment below!</p>
+          </div>
+        </div>
+        {% if site.disqus_account %}
+        <div class="pure-g comments">
+          <div class="pure-u-1 content-panel">
+            <div id="disqus_thread">
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          </div>
+          <div class="pure-u-1-4">&nbsp;</div>
         </div>
         {% endif %}
       </div>
       <div class="pure-u-1-4">&nbsp;</div>
     </div>
   </div>
-  <div class="feedback">
-    <div class="pure-g">
-      <div class="pure-u-1-4">&nbsp;</div>
-      <div class="pure-u-1-2 content-panel">
-        <p>I <i class="fa fa-heart"></i> feedback.</p>
-        <p>Let me know what you think of this article on twitter <a href="http://www.twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a> or leave a comment below!</p>
-      </div>
-      <div class="pure-u-1-4">&nbsp;</div>
-    </div>
-  </div>
-  {% if site.disqus_account %}
-  <div class="comments">
-    <div class="pure-g">
-      <div class="pure-u-1-4">&nbsp;</div>
-      <div class="pure-u-1-2 content-panel">
-        <div id="disqus_thread">
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
-      </div>
-      <div class="pure-u-1-4">&nbsp;</div>
-    </div>
-  </div>
-  {% endif %}
-</div>
 
-<div class="related">
-  <div class="pure-g">
-    <div class="pure-u-1-4">&nbsp;</div>
-    <div class="pure-u-1-2 content-panel">
-      <div class="pure-g">
-        {% for post in site.related_posts limit:1 %}
-        <div class="related-header pure-u-1">
-          <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
-        </div>
-        <div class="related-title pure-u-1">
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </div>
-        <div class="excerpt pure-u-1">
-          {% if post.summary %}
-            {{ post.summary | strip_html | truncatewords:30 }}
-          {% else %}
-            {{ post.excerpt | strip_html | truncatewords:30 }}
-          {% endif %}
-          <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
-        </div>
-        {% endfor %}
-        <hr />
-        <div class="pure-u-1">
-          <div class="previous-next">
-            <div class="pure-g">
-              <div class="pure-u-1-2">
-                <div class="previous">
-                  {% if page.previous %}
-                  <p><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a></p>
-                  <p class="date">Published {{ page.previous.date | date: "%B %-d, %Y" }}</p>
-                  {% endif %}
+  <div class="related-posts">
+    <div class="pure-g">
+      <div class="pure-u-1-4">&nbsp;</div>
+      <div class="pure-u-1-2 content-panel">
+        <div class="pure-g">
+          {% for post in site.related_posts limit:1 %}
+          <div class="related-header pure-u-1">
+            <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+          </div>
+          <div class="related-title pure-u-1">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </div>
+          <div class="excerpt pure-u-1">
+            {% if post.summary %}
+              {{ post.summary | strip_html | truncatewords:30 }}
+            {% else %}
+              {{ post.excerpt | strip_html | truncatewords:30 }}
+            {% endif %}
+            <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
+          </div>
+          {% endfor %}
+          <hr />
+          <div class="pure-u-1">
+            <div class="previous-next">
+              <div class="pure-g">
+                <div class="pure-u-1-2">
+                  <div class="previous">
+                    {% if page.previous %}
+                    <p><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a></p>
+                    <p class="date">Published {{ page.previous.date | date: "%B %-d, %Y" }}</p>
+                    {% endif %}
+                  </div>
                 </div>
-              </div>
-              <div class="pure-u-1-2">
-                <div class="next">
-                  {% if page.next %}
-                  <p><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></p>
-                  <p class="date">Published {{ page.next.date | date: "%B %-d, %Y" }}</p>
-                  {% endif %}
+                <div class="pure-u-1-2">
+                  <div class="next">
+                    {% if page.next %}
+                    <p><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></p>
+                    <p class="date">Published {{ page.next.date | date: "%B %-d, %Y" }}</p>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="pure-u-1-4">&nbsp;</div>
     </div>
-    <div class="pure-u-1-4">&nbsp;</div>
   </div>
 </div>
 
