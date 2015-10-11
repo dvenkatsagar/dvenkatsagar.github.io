@@ -281,6 +281,10 @@ ul {
 		transform-style: preserve-3d;
 	}
 	.carousel-item{
+		canvas{
+			height:auto;
+			width:inherit;
+		}
 		outline: 0;
 	}
 }
