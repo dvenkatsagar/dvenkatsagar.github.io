@@ -1,15 +1,16 @@
 <div class="page-header">
-  <label class="menu-button"><i class="fa fa-bars"></i></label>
+  <label class="menu-button" for="menu-check"><i class="fa fa-bars"></i></label>
+  <input id="menu-check" type="checkbox" hidden>
   <nav id="side-menu">
     <div class="pure-g">
       <div class="pure-u-1">
         <ul class="nav">
           <li class="pure-g {% if page.nav == 'home' %} active {% endif %}" ><a href="{{ site.baseurl }}/" class="pure-u-1"><i class="fa fa-home"></i> <span>Home</span></a></li>
           <li class="pure-g {% if page.nav == 'portfolio' %} active {% endif %}" ><a href="{{ site.baseurl }}/portfolio/" class="pure-u-1"><i class="fa fa-briefcase"></i> <span>Portfolio</span></a></li>
-          {% assign array = "blog|projects|presentations|tutorials|posts" | split: "|" %}
-          <li class="pure-g {% if array contains page.nav %} active {% endif %}" ><a href="{{ site.baseurl }}/blog/" class="pure-u-1"><i class="fa fa-comment"></i> <span>Blog</span></a></li>
+          <!--{% assign array = "blog|projects|presentations|tutorials|posts" | split: "|" %}
+          <li class="pure-g {% if array contains page.nav %} active {% endif %}" ><a href="{{ site.baseurl }}/blog/" class="pure-u-1"><i class="fa fa-comment"></i> <span>Blog</span></a></li-->
           <li class="pure-g {% if page.nav == 'archive' %} active {% endif %}" ><a href="{{ site.baseurl }}/archive/" class="pure-u-1"><i class="fa fa-archive"></i> <span>Archive</span></a></li>
-          <li class="pure-g {% if page.nav == 'contact' %} active {% endif %}" ><a href="{{ site.baseurl }}/contact/" class="pure-u-1"><i class="fa fa-user"></i> <span>Contact Me</span></a></li>
+          <li class="pure-g {% if page.nav == 'about' %} active {% endif %}" ><a href="{{ site.baseurl }}/about/" class="pure-u-1"><i class="fa fa-user"></i> <span>About Me</span></a></li>
         </ul>
       </div>
     </div>

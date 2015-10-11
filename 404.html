@@ -22,7 +22,7 @@ permalink: /404.html
   <div class="pure-u-1-4">&nbsp;</div>
 </div>
 
-<div class="pure-g related-posts">
+<div class="pure-g suggested-posts">
   <div class="pure-u-1-4">&nbsp;</div>
   <div class="pure-u-1-2 content-panel">
 
@@ -32,9 +32,9 @@ permalink: /404.html
         <a href="{{ site.baseurl }}{{ post.url }}">Suggested Article</a>
       </div>
       <div class="related-title pure-u-1">
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       </div>
-      <div class="excerpt pure-u-1">
+      <div class="related-description pure-u-1">
         {% if post.summary %}
           {{ post.summary | strip_html | truncatewords:30 }}
         {% else %}

@@ -27,12 +27,10 @@ layout: default
               </div>
               {% endif %}
             </div>
-            <div class="pure-u-1">
-              <h1 class="header">{{ page.title }}</h1>
-            </div>
+            <h1 class="header pure-u-1">{{ page.title }}</h1>
             <div class="pure-u-1">
               <div class="author-details">
-                <small>
+                <p>
                   <i>
                     {% if page.author %}
                     by
@@ -49,7 +47,7 @@ layout: default
                     on {{ page.date | date: "%B %-d, %Y" }}
                     {% if page.categories != empty %} under {% for category in page.categories limit:1 %}{{ category }}{% endfor %}{% endif %}
                   </i>
-                </small>
+                </p>
               </div>
             </div>
             <div class="pure-u-1">
@@ -67,10 +65,10 @@ layout: default
             {% if page.tags and page.tags.size > 0 %}
             <div class="article-footer">
               <div class="tags">
-                <small>
+                <p>
                   <i class="fa fa-tags"></i>
                   {{ page.tags | join: ', ' }}
-                </small>
+                </p>
               </div>
             </div>
             {% endif %}
@@ -107,10 +105,10 @@ layout: default
           <div class="related-header pure-u-1">
             <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
           </div>
-          <div class="related-title pure-u-1">
+          <h2 class="related-title pure-u-1">
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-          </div>
-          <div class="excerpt pure-u-1">
+          </h2>
+          <div class="related-description pure-u-1">
             {% if post.summary %}
               {{ post.summary | strip_html | truncatewords:30 }}
             {% else %}

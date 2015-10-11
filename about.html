@@ -1,0 +1,178 @@
+---
+layout: default
+title: About Me
+nav: about
+permalink: /about/
+thumbnail: me
+---
+
+<div class="pure-g" id="about-me">
+  <div class="pure-u-1-4">&nbsp;</div>
+  <div class="pure-u-1-2">
+    <div class="article-header">
+      <div class="pure-u-2-5">&nbsp;</div>
+      <div class="pure-u-1-5">
+        {% if site.data.thumbnail[page.thumbnail] %}
+        <div class="thumb">
+          <img class="img-circle" src="{{ site.data.thumbnail[page.thumbnail] }}" alt="Thumbnail: {{ page.thumbnail }}" />
+        </div>
+        {% elsif page.thumbnail %}
+        <div class="thumb">
+          <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
+        </div>
+        {% endif %}
+      </div>
+      <div class="pure-u-2-5">&nbsp;</div>
+      <h1 class="header pure-u-1">{{ page.title }}</h1>
+    </div>
+    <div class="pure-g content-panel">
+      <div class="pure-u-1">
+        <div class="pure-g  about-me">
+          <div class="pure-u-1">
+            <p >Hi, I'm Sagar, a developer/designer based in Florida, USA who is currently doing his Masters in Computers and Information Sciences at Florida State University.</p>
+            <p>What I basically do is :</p>
+          </div>
+          <div class="pure-u-1">
+            <div class="pure-g">
+              <div class="responsive-animation" data-animation-step="1">
+                <div class="device">
+      				    <div class="phone-home-button"></div>
+      				    <div class="tablet-home-button"></div>
+      				    <div class="screen-stand">
+                    <div class="leg"></div>
+                    <div class="foot"></div>
+                  </div>
+      				    <div class="display">
+      					    <div class="slide1 pure-u-1"><div><em>desktops</em></div></div>
+      					    <div class="slide2 pure-u-1"><div><em>tablets</em></div></div>
+      					    <div class="slide3 pure-u-1"><div><em>phones</em></div></div>
+      				    </div>
+      			    </div>
+    		      </div>
+            </div>
+          </div>
+          <div class="pure-u-1">
+            <p><i class="fa fa-star"></i> Create websites that are responsive by design and interactive by nature.</p>
+            <p><i class="fa fa-star"></i> Write codes that are simple but can do complex computation.</p>
+            <p><i class="fa fa-star"></i> Involve in projects that can teach me something new and valuable.</p>
+            <p><i class="fa fa-star"></i> Learn, Adapt, and share the knowledge that I gained with the world.</p>
+            <p><i class="fa fa-star"></i> Help other developers by contributing to their code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pure-g carousel-container">
+      <div class="pure-u-1 content-panel">
+        <div class="pure-g">
+          <h1 class="pure-u-1 carousel-header">My Skills</h1>
+          <div class="carousel pure-u-1">
+            <div class="pure-g carousel-item">
+              <h2 class="pure-u-1">As a Programmer</h2>
+              <div class="pure-u-1-8">&nbsp;</div>
+              <canvas class="pure-u-3-4" id="skills-prog-chart"></canvas>
+              <div class="pure-u-1-8">&nbsp;</div>
+            </div>
+            <div class="pure-g carousel-item">
+              <h2 class="pure-u-1">As a Web Developer</h2>
+              <div class="pure-u-1-8">&nbsp;</div>
+              <canvas class="pure-u-3-4" id="skills-web-chart"></canvas>
+              <div class="pure-u-1-8">&nbsp;</div>
+            </div>
+            <div class="pure-g carousel-item">
+              <h2 class="pure-u-1">As a Media Creator</h2>
+              <div class="pure-u-1-8">&nbsp;</div>
+              <canvas class="pure-u-3-4" id="skills-media-chart"></canvas>
+              <div class="pure-u-1-8">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pure-g" id="contact-details">
+      <div class="pure-u-1">
+        <h3 class="contact-label">Available for hire. Contact me via :</h3>
+      </div>
+      <div class="pure-u-1">
+        {% include social_links.html %}
+      </div>
+    </div>
+  </div>
+  <div class="pure-u-1-4">&nbsp;</div>
+</div>
+
+
+<script src="{{ site.baseurl }}/lib/js/Chart.min.js"></script>
+<script type="text/javascript">
+var duration = 7000, steps = 3, step = 1;
+setInterval( function() {
+  document.querySelector( '.responsive-animation' ).setAttribute( 'data-animation-step', step = ++step > steps ? 1 : step );
+}, duration / steps );
+
+var data = {
+  skills_prog : {
+    labels: ["C", "C++", "JAVA", "PYTHON", "SHELL SCRIPT"],
+    datasets: [
+      {
+        label: "Programming Skills",
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,0.8)",
+        highlightFill: "rgba(151,187,205,0.75)",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: [8,8.5,7.5,9.5,8.5]
+      }
+    ]
+  },
+  skills_web : {
+    labels: ["HTML5", "CSS3", "PHP", "JS", "NODEJS", "SQL", "MONGO-DB"],
+    datasets: [
+      {
+        label: "Web Development Skills",
+        fillColor: "rgba(220,220,220,0.5)",
+        strokeColor: "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data: [9.5, 9.5, 9.5, 9.5, 8.5, 8, 8]
+      }
+    ]
+  },
+  skills_media:{
+    labels: ["Adobe Suite","Maya","3DS Max","Cinema 4D","Open Source"],
+    datasets: [
+      {
+        label: "Media Creation Skills",
+        fillColor: "rgba(204,255,153,0.5)",
+        strokeColor: "rgba(204,255,153,0.8)",
+        highlightFill: "rgba(204,255,153,0.75)",
+        highlightStroke: "rgba(204,255,153,1)",
+        data: [8,6.5,6,7.5,8.5]
+      }
+    ]
+  }
+};
+
+var options = {
+  scaleLineColor: "rgba(128,128,128,0.5)",
+  scaleFontColor: "#888",
+  scaleFontSize : 13,
+  scaleOverride: true,
+  scaleSteps: 5,
+  scaleStepWidth: 2,
+  scaleStartValue: 0,
+  scaleGridLineColor : "rgba(0,0,0,0.2)",
+  barStrokeWidth : 1,
+  barValueSpacing : 15
+};
+
+var charts = {};
+var ctx = {};
+var legend = {};
+ctx.skills_prog_chart = document.getElementById("skills-prog-chart").getContext("2d");
+ctx.skills_web_chart = document.getElementById("skills-web-chart").getContext("2d");
+ctx.skills_media_chart = document.getElementById("skills-media-chart").getContext("2d");
+charts.skills_prog_chart = new Chart(ctx.skills_prog_chart).Bar(data.skills_prog, options);
+charts.skills_web_chart = new Chart(ctx.skills_web_chart).Bar(data.skills_web, options);
+charts.skills_media_chart = new Chart(ctx.skills_media_chart).Bar(data.skills_media, options);
+
+console.log(charts.skills_media_chart.datasets[0].bars[0])
+
+</script>

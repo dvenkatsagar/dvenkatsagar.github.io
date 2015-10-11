@@ -21,7 +21,7 @@ thumbnail: archive
         </div>
         {% endif %}
       </div>
-      <h1 class="header pure-u-1">Archive</h1>
+      <h1 class="header pure-u-1">{{ page.title }}</h1>
       <div class="pure-u-1" id="search-container">
         <div class="pure-g">
           <div class="pure-u-1-5">&nbsp;</div>
@@ -53,7 +53,13 @@ thumbnail: archive
               <ul>
               {% endif %}
                 <li>
-                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+                  <p>{{ post.summary }}</p>
+                  {% if forloop.index != forloop.length %}
+                    {% if this_year == next_year %}
+                    <hr class="hr-small"/>
+                    {% endif %}
+                  {% endif %}
                 </li>
               {% if forloop.last %}
               </ul>
