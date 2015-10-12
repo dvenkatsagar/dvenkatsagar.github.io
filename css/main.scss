@@ -53,13 +53,13 @@ body {
 /* Page */
 .page-header
 {
-	height:6em;
+	height:5em;
 	width:100%;
 
 	.menu-button {
 		color: $white;
 		font-size: 1.5em;
-		position: absolute;
+		position: fixed;
 		top: 1.5em;
 		left: 1.5em;
 		cursor: pointer;
@@ -334,7 +334,7 @@ ul {
 }
 
 /* Portfolio and Contact*/
-#contact-details{
+.contact-details{
 	.name{
 		text-align: center;
 		margin: 0.5em auto auto;
@@ -351,19 +351,30 @@ ul {
 
 #about-me{
 	.about-me{
-		margin: 0.5em 1em;
 		text-align: center;
+		.content-panel{
+			& > .pure-g{
+				margin: auto 1em;
+			}
+		}
 		p{
 			text-align: justify;
 		}
 	}
-	.carousel-container{
+	.skills{
+		text-align: center;
 		.content-panel{
 			margin:1.5em auto auto;
+			& > .pure-g{
+				margin:auto 1em;
+			}
 		}
-		.carousel{
-			.carousel-header{
-				margin: 0.5em auto;
+		.header{
+			margin: 0.5em auto;
+		}
+		.abbr{
+			p {
+				text-align: justify;
 			}
 		}
 	}
@@ -524,9 +535,7 @@ ul {
 
 	#results-list{
 		display:none;
-		padding:1em;
 	}
-
 	#search-input{
 		color:black;
 	}
@@ -584,7 +593,7 @@ ul {
   }
 }
 
-.related-posts,.suggested-posts{
+#related-posts,#suggested-posts{
   margin-top: 1em;
   .related-header {
     text-align: center;
@@ -632,7 +641,7 @@ ul {
   }
 }
 
-.suggested-posts{
+#suggested-posts{
 	margin-top: 3em;
 	.related-title{
 		margin: 0.5em auto;
@@ -641,6 +650,7 @@ ul {
 
 /* 404 page */
 #not-found {
+	text-align:center;
 	.header{
 		margin: 0.5em auto auto;
 	}

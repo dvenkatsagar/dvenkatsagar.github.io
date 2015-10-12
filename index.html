@@ -8,6 +8,7 @@ thumbnail: home
 <div class="pure-g" id="home">
   <div class="pure-u-1-4">&nbsp;</div>
   <div class="pure-u-1-2">
+
     <div class="pure-g article-header animated fadeInDown" id="welcome">
       <div class="pure-u-1">
         {% if site.data.thumbnail[page.thumbnail] %}
@@ -25,6 +26,7 @@ thumbnail: home
         <p>Welcome to my site. This site is still under construction. Im still in progress of uploading the posts. So please come back later.</p>
       </div>
     </div>
+
     <div class="pure-g animated fadeIn carousel-container">
       <div class="pure-u-1 content-panel">
         <div class="carousel">
@@ -85,11 +87,12 @@ thumbnail: home
         </div>
       </div>
     </div>
+
     <div class="pure-g" id="latest-articles">
-      <div class="content-panel animated fadeInUp">
-        <div class="articles">
+      <div class=" pure-u-1 content-panel animated fadeInUp">
+        <div class="pure-g articles">
+          <h1 class="header pure-u-1">Latest Articles</h1>
           <div class="pure-u-1">
-            <h1 class="header">Latest Articles</h1>
             <ul class="articles-list">
               {% if site.posts.size != 0 %}
                 {% for post in site.posts | limit: site.post_limit %}

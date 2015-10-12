@@ -1,4 +1,7 @@
+{% assign arr = "about|archive" | split: "|" %}
+{% unless arr contains page.nav %}
 <script src="{{ site.baseurl }}/lib/js/jquery.min.js"></script>
+{% endunless %}
 <script type="text/javascript" src="{{ site.baseurl }}/lib/js/slick.min.js"></script>
 <script src="{{ site.baseurl }}/lib/js/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>

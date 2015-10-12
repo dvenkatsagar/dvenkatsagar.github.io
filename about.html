@@ -9,7 +9,8 @@ thumbnail: me
 <div class="pure-g" id="about-me">
   <div class="pure-u-1-4">&nbsp;</div>
   <div class="pure-u-1-2">
-    <div class="article-header">
+
+    <div class="pure-g article-header">
       <div class="pure-u-2-5">&nbsp;</div>
       <div class="pure-u-1-5">
         {% if site.data.thumbnail[page.thumbnail] %}
@@ -24,7 +25,7 @@ thumbnail: me
       </div>
       <div class="pure-u-2-5">&nbsp;</div>
       <div class="pure-u-1">
-        <div class="pure-g" id="contact-details">
+        <div class="pure-g contact-details">
           <div class="pure-u-1">
             <h3 class="contact-label">Available for hire. Contact me via :</h3>
           </div>
@@ -35,9 +36,10 @@ thumbnail: me
       </div>
       <h1 class="header pure-u-1">{{ page.title }}</h1>
     </div>
-    <div class="pure-g content-panel">
-      <div class="pure-u-1">
-        <div class="pure-g  about-me">
+
+    <div class="pure-g about-me">
+      <div class="pure-u-1 content-panel">
+        <div class="pure-g">
           <div class="pure-u-1">
             <p >Hi, I'm Sagar, a developer/designer based in Florida, USA who is currently doing his Masters in Computers and Information Sciences at Florida State University.</p>
             <p>What I basically do is :</p>
@@ -71,92 +73,83 @@ thumbnail: me
         </div>
       </div>
     </div>
-    <div class="pure-g carousel-container">
+
+    <div class="pure-g skills">
       <div class="pure-u-1 content-panel">
         <div class="pure-g">
-          <h1 class="pure-u-1 carousel-header">My Skills</h1>
-          <div class="carousel pure-u-1">
-            <div class="pure-g carousel-item">
-              <h2 class="pure-u-1">As a Programmer</h2>
-              <div class="pure-u-1-8">&nbsp;</div>
-              <div class="pure-u-3-4">
-                <canvas id="skills-prog-chart"></canvas>
+          <h1 class="pure-u-1 header">My Skills</h1>
+          <div class="pure-u-1">
+            <div class="pure-g">
+              <h2 class="pure-u-1" id="skill-label">As a Programmer</h2>
+              <div class="pure-u-1 chart-container">
+                <canvas id="skills-chart"></canvas>
               </div>
-              <div class="pure-u-1-8">&nbsp;</div>
-            </div>
-            <div class="pure-g carousel-item">
-              <h2 class="pure-u-1">As a Web Developer</h2>
-              <div class="pure-u-1-8">&nbsp;</div>
-              <div class="pure-u-3-4">
-                <canvas id="skills-web-chart"></canvas>
+              <div class="pure-u-1 abbr">
+                <p><i class="fa fa-star"></i> Server Side - PHP, SQL, Xampp.</p>
+                <p><i class="fa fa-star"></i> Other Web Technologies - Nodejs, MongoDB, NoSQL, Mean, Sails, Hadoop, Mahout.</p>
+                <p><i class="fa fa-star"></i> OS - Open Source Alternatives like Blender, Gimp, Inkscape, Synfig Studios, Pencil, MyPaint, Alchemy.</p>
+                <p><i class="fa fa-star"></i> ACS - Adobe Creative Suite.</p>
               </div>
-              <div class="pure-u-1-8">&nbsp;</div>
-            </div>
-            <div class="pure-g carousel-item">
-              <h2 class="pure-u-1">As a Media Creator</h2>
-              <div class="pure-u-1-8">&nbsp;</div>
-              <div class="pure-u-3-4">
-                <canvas id="skills-media-chart"></canvas>
-              </div>
-              <div class="pure-u-1-8">&nbsp;</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
   <div class="pure-u-1-4">&nbsp;</div>
 </div>
 
 
 <script src="{{ site.baseurl }}/lib/js/Chart.min.js"></script>
+<script src="{{ site.baseurl }}/lib/js/jquery.min.js"></script>
 <script type="text/javascript">
 var duration = 7000, steps = 3, step = 1;
 setInterval( function() {
-  document.querySelector( '.responsive-animation' ).setAttribute( 'data-animation-step', step = ++step > steps ? 1 : step );
+  document.querySelector( '#about-me .responsive-animation' ).setAttribute( 'data-animation-step', step = ++step > steps ? 1 : step );
 }, duration / steps );
 
-var data = {
-  skills_prog : {
-    labels: ["C", "C++", "JAVA", "PYTHON", "SHELL SCRIPT"],
-    datasets: [
-      {
-        label: "Programming Skills",
-        fillColor: "rgba(151,187,205,0.5)",
-        strokeColor: "rgba(151,187,205,0.8)",
-        highlightFill: "rgba(151,187,205,0.75)",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: [8,8.5,7.5,9.5,8.5]
-      }
-    ]
-  },
-  skills_web : {
-    labels: ["HTML5", "CSS3", "PHP", "JS", "NODEJS", "SQL", "MONGO-DB"],
-    datasets: [
-      {
-        label: "Web Development Skills",
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data: [9.5, 9.5, 9.5, 9.5, 8.5, 8, 8]
-      }
-    ]
-  },
-  skills_media:{
-    labels: ["Adobe Suite","Maya","3DS Max","Cinema 4D","Open Source"],
-    datasets: [
-      {
-        label: "Media Creation Skills",
-        fillColor: "rgba(204,255,153,0.5)",
-        strokeColor: "rgba(204,255,153,0.8)",
-        highlightFill: "rgba(204,255,153,0.75)",
-        highlightStroke: "rgba(204,255,153,1)",
-        data: [8,6.5,6,7.5,8.5]
-      }
-    ]
-  }
-};
+var skills_program = {
+  labels: ["C", "C++", "JAVA", "PYTHON", "SHELL SCRIPT"],
+  datasets: [
+    {
+      label: "Programming Skills",
+      fillColor: "rgba(151,187,205,0.5)",
+      strokeColor: "rgba(151,187,205,0.8)",
+      highlightFill: "rgba(151,187,205,0.75)",
+      highlightStroke: "rgba(151,187,205,1)",
+      data: [8,8.5,7.5,9.5,8.5]
+    }
+  ]
+}
+
+var skills_web = {
+  labels: ["HTML5", "CSS3", "JS", "Server Side","Other"],
+  datasets: [
+    {
+      label: "Web Development Skills",
+      fillColor: "rgba(220,220,220,0.5)",
+      strokeColor: "rgba(220,220,220,0.8)",
+      highlightFill: "rgba(220,220,220,0.75)",
+      highlightStroke: "rgba(220,220,220,1)",
+      data: [9.5, 9.5, 9.5, 8.5, 8.5]
+    }
+  ]
+}
+
+var skills_media = {
+  labels: ["ACS","3D Tools","Media Editing","Game Design","OS"],
+  datasets: [
+    {
+      label: "Media Creation Skills",
+      fillColor: "rgba(204,255,153,0.5)",
+      strokeColor: "rgba(204,255,153,0.8)",
+      highlightFill: "rgba(204,255,153,0.75)",
+      highlightStroke: "rgba(204,255,153,1)",
+      data: [8,6.5,6,7.5,8.5]
+    }
+  ]
+}
 
 var options = {
   scaleLineColor: "rgba(128,128,128,0.5)",
@@ -167,20 +160,120 @@ var options = {
   scaleStepWidth: 2,
   scaleStartValue: 0,
   scaleGridLineColor : "rgba(0,0,0,0.2)",
-  barStrokeWidth : 1,
-  barValueSpacing : 15
+  responsive: true
 };
 
 var charts = {};
-var ctx = {};
-var legend = {};
-ctx.skills_prog_chart = document.getElementById("skills-prog-chart").getContext("2d");
-ctx.skills_web_chart = document.getElementById("skills-web-chart").getContext("2d");
-ctx.skills_media_chart = document.getElementById("skills-media-chart").getContext("2d");
-charts.skills_prog_chart = new Chart(ctx.skills_prog_chart).Bar(data.skills_prog, options);
-charts.skills_web_chart = new Chart(ctx.skills_web_chart).Bar(data.skills_web, options);
-charts.skills_media_chart = new Chart(ctx.skills_media_chart).Bar(data.skills_media, options);
+ctx = document.getElementById("skills-chart").getContext("2d");
+var data = $.extend(true,{},skills_program);
+skills_chart = new Chart(ctx).Bar(data, options);
 
-console.log(charts.skills_media_chart.datasets[0].bars[0])
+
+function load_skills(main_chart, load_data){
+  if (main_chart.datasets[0].bars.length > load_data.labels.length){
+    var diff = main_chart.datasets[0].bars.length - load_data.labels.length;
+    for(var i = 0; i < diff; i++){
+      main_chart.removeData();
+    }
+  }else if (main_chart.datasets[0].bars.length < load_data.labels.length) {
+    var diff = load_data.labels.length - main_chart.datasets[0].bars.length;
+    for(var i = 0; i < diff; i++){
+      main_chart.addData([0],"");
+    }
+  }
+
+  for(var i = 0; i < load_data.labels.length; i++){
+    // update value of bar
+    main_chart.datasets[0].bars[i].value = load_data.datasets[0].data[i];
+    // update label of bar
+    main_chart.datasets[0].bars[i].label = load_data.labels[i];
+
+    // update fill color of bar
+    main_chart.datasets[0].bars[i].fillColor = load_data.datasets[0].fillColor;
+    // update hightlight fill of bar
+    main_chart.datasets[0].bars[i].highlightFill = load_data.datasets[0].highlightFill;
+    // update hightlight stroke of bar
+    main_chart.datasets[0].bars[i].highlightStroke = load_data.datasets[0].highlightStroke;
+    // update stroke color of bar
+    main_chart.datasets[0].bars[i].strokeColor = load_data.datasets[0].strokeColor;
+    // update datasetLabel of bar
+    main_chart.datasets[0].bars[i].datasetLabel = load_data.datasets[0].label;
+    // update scale label of bar
+    main_chart.scale.xLabels[i] = load_data.labels[i];
+  }
+
+  // update dataset label, fillcolor and stroke color
+  main_chart.datasets[0].label = load_data.datasets[0].label;
+  main_chart.datasets[0].fillColor = load_data.datasets[0].fillColor;
+  main_chart.datasets[0].strokeColor = load_data.datasets[0].strokeColor;
+  main_chart.update();
+}
+
+
+var timeout = [];
+var state = 0;
+var que = [];
+var interval;
+function switcher(i){
+  switch(i){
+  case 0 :  load_skills(skills_chart, skills_web);
+            $("#skills-label").text("As a Web Developer");
+            state = 0;
+            que.push(state);
+          break;
+  case 1 : load_skills(skills_chart, skills_media);
+            $("#skills-label").text("As a Media Creator");
+            state = 1;
+            que.push(state);
+          break;
+  case 2 : load_skills(skills_chart, skills_program);
+            $("#skills-label").text("As a Programmer");
+            state = 2;
+            que.push(state);
+          break;
+  default: timeout[0] =  setTimeout(function(){
+            load_skills(skills_chart, skills_web);
+            $("#skills-label").text("As a Web Developer");
+            state = 0;
+            que.push(state);
+          },3000);
+          timeout[1] =  setTimeout(function(){
+            load_skills(skills_chart, skills_media);
+            $("#skills-label").text("As a Media Creator");
+            state = 1;
+            que.push(state);
+          },6000);
+          timeout[2] = setTimeout(function(){
+            load_skills(skills_chart, skills_program);
+            $("#skills-label").text("As a Programmer");
+            state = 2;
+            que.push(state);
+          },9000);
+          break;
+  }
+}
+
+switcher(3);
+timeout[4] = setTimeout(function(){
+  interval = setInterval(function(){
+    var i = que.shift();
+    console.log(i);
+    switcher(i);
+  },3000);
+},12000);
+
+$("#skills-chart").hover(function(){
+  for(var j = 0; j < 4; j++){
+    clearInterval(timeout[j]);
+  }
+  clearInterval(interval);
+
+},function(){
+  interval = setInterval(function(){
+    var i = que.shift();
+    console.log(i);
+    switcher(i);
+  },3000);
+});
 
 </script>

@@ -6,44 +6,47 @@ permalink: /404.html
 
 <div class="pure-g" id="not-found">
   <div class="pure-u-1-4">&nbsp;</div>
-  <div class="pure-u-1-2 content-panel articles">
+  <div class="pure-u-1-2">
+
     <div class="pure-g">
-      <h2 class="header pure-u-1">404</h2>
-      <div class="error-text pure-u-1">
-        <p>Sorry but this page doesn't seem to exist.</p>
-      </div>
-      <div class="menu-links pure-u-1">
-        <a href="{{ site.baseurl }}/">Home</a> |
-        <a href="{{ site.baseurl }}/archive/">Archive</a> |
-        <a href="{{ site.baseurl }}/contact/">Contact me</a>
+      <div class="pure-u-1 content-panel">
+        <div class="pure-g">
+          <h2 class="header pure-u-1">404</h2>
+          <div class="error-text pure-u-1">
+            <p>Sorry but this page doesn't seem to exist.</p>
+          </div>
+          <div class="menu-links pure-u-1">
+            <a href="{{ site.baseurl }}/">Home</a> |
+            <a href="{{ site.baseurl }}/archive/">Archive</a> |
+            <a href="{{ site.baseurl }}/about/">Contact me</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="pure-u-1-4">&nbsp;</div>
-</div>
 
-<div class="pure-g suggested-posts">
-  <div class="pure-u-1-4">&nbsp;</div>
-  <div class="pure-u-1-2 content-panel">
-
-    {% for post in site.posts limit:1 %}
-    <div class="pure-g">
-      <div class="related-header pure-u-1">
-        <a href="{{ site.baseurl }}{{ post.url }}">Suggested Article</a>
-      </div>
-      <div class="related-title pure-u-1">
-        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-      </div>
-      <div class="related-description pure-u-1">
-        {% if post.summary %}
-          {{ post.summary | strip_html | truncatewords:30 }}
-        {% else %}
-          {{ post.excerpt | strip_html | truncatewords:30 }}
-        {% endif %}
-        <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
+    <div class="pure-g" id="suggested-posts">
+      <div class="pure-u-1 content-panel">
+        {% for post in site.posts limit:1 %}
+        <div class="pure-g">
+          <div class="related-header pure-u-1">
+            <a href="{{ site.baseurl }}{{ post.url }}">Suggested Article</a>
+          </div>
+          <div class="related-title pure-u-1">
+            <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+          </div>
+          <div class="related-description pure-u-1">
+            {% if post.summary %}
+              {{ post.summary | strip_html | truncatewords:30 }}
+            {% else %}
+              {{ post.excerpt | strip_html | truncatewords:30 }}
+            {% endif %}
+            <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
+          </div>
+        </div>
+        {% endfor %}
       </div>
     </div>
-    {% endfor %}
+
   </div>
   <div class="pure-u-1-4">&nbsp;</div>
 </div>
