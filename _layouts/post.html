@@ -102,12 +102,12 @@ layout: default
   <div class="pure-g" id="related-posts">
     <div class="pure-u-1-4">&nbsp;</div>
     <div class="pure-u-1-2">
-
       <div class="pure-g content-panel">
-        {% for post in site.related_posts limit:1 %}
         <div class="related-header pure-u-1">
-          <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+          <span>Read More</span>
         </div>
+        {% if site.related_posts.size != 0 %}
+        {% for post in site.related_posts limit:1 %}
         <h2 class="related-title pure-u-1">
           <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </h2>
@@ -119,8 +119,15 @@ layout: default
           {% endif %}
           <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
         </div>
-        {% endfor %}
+        {% if forloop.last %}
         <hr />
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        <h4 class="related-title pure-u-1">
+          <span>No more posts available as of now</span>
+        </h4>
+        {% endif %}
         <div class="pure-u-1">
           <div class="previous-next">
             <div class="pure-g">

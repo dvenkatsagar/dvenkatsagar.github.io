@@ -10,8 +10,9 @@ post_limit: 5
 twitter_username: "dvenkatsagar"
 facebook_username: dvenkatsagar
 git_username:  dvenkatsagar
-linkedin_link: http://www.linkedin.com/dvenkatsagar
-google_plus_link: "https://plus.google.com/+SagarDwibhashyam"
+linkedin_link: https://www.linkedin.com/dvenkatsagar
+google_plus_link: https://plus.google.com/+SagarDwibhashyam
+stackoverflow_link: https://www.stackoverflow.com/users/3228518/dvenkatsagar
 disqus_account: dvenkatsagar-github
 
 # Build settings

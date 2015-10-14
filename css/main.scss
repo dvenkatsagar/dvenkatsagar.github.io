@@ -39,7 +39,7 @@ html {
 body {
 	font-family: 'Ubuntu', serif;
 	background-image: url("../lib/bgs/d23.png");
-
+  color: Gainsboro;
 	background-size: auto;
 	background-repeat: repeat;
 }
@@ -53,7 +53,7 @@ body {
 /* Page */
 .page-header
 {
-	height:5em;
+	height:2em;
 	width:100%;
 
 	.menu-button {
@@ -66,9 +66,8 @@ body {
 		padding: 10px 15px;
 		background-color: $dark;
 		z-index: 999;
-		border-radius: 0.2em;
 		&:hover{
-			color: $light-blue;
+			color: $orange;
 			border-bottom-left-radius: 0em;
 			border-bottom-right-radius: 0em;
 		}
@@ -127,11 +126,14 @@ body {
 
 /* Global */
 a {
+	color: $orange;
 	text-decoration: none;
 	&:active{
+		color: $orange;
 		text-decoration: none;
 	}
 	&:hover {
+		color: $red;
 		text-decoration: none;
 	}
 }
@@ -157,8 +159,7 @@ ul {
 
 .content-panel {
 	background-color: $darker;
-	border-bottom: 5px solid $light-blue;
-	border-radius: 5px;
+	border-bottom: 5px solid $orange;
 }
 
 .articles{
@@ -250,14 +251,14 @@ ul {
 		}
 
 		&:hover{
-			border-left: 0.4em solid $light-blue;
+			border-left: 0.4em solid $orange;
 			background-color: #222;
 		}
 	}
 
 	.active{
 		background-color: #222;
-		border-left: 0.4em solid $light-blue;
+		border-left: 0.4em solid $orange;
 	}
 
   &:hover{
@@ -273,7 +274,7 @@ ul {
 .carousel-container{
 	text-align: center;
 	.content-panel{
-		border-top: 5px solid $light-blue;
+		border-top: 5px solid $orange;
 	}
 	.carousel{
 		-webkit-transform-style: preserve-3d;
@@ -566,6 +567,7 @@ ul {
     .article-image{
       width : 100%;
     }
+
   }
 
   .article-footer{
@@ -579,7 +581,7 @@ ul {
   .feedback{
     font-weight: lighter;
     .fa-heart{
-      color:$red;
+      color:$orange;
     }
     p{
       text-align: center;
@@ -599,16 +601,12 @@ ul {
     text-align: center;
 		margin-top: -0.8em;
 
-		a {
+		span {
 			color: $white;
 			width: auto;
 			padding: 0.5em 1em;
 			background-color: $darker;
 			box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
-
-      &:hover {
-  			color: $dark-blue;
-  		}
 		}
 	}
 
@@ -617,9 +615,9 @@ ul {
     margin: 1em auto;
 
 		a {
-			color: $light-blue;
+			color: $orange;
       &:hover {
-  			color: $dark-blue;
+  			color: $red;
   		}
 		}
 	}
@@ -661,47 +659,4 @@ ul {
 	.menu-links{
 		margin: auto auto 1em;
 	}
-}
-
-/* responsive grid hidden */
-/* em pure-hidden values */
-/* pure-hidden-xs */
-@media screen and (max-width:35.438em) {
-    .pure-visible-sm{display:none}
-    .pure-visible-md{display:none}
-    .pure-visible-lg{display:none}
-    .pure-visible-xl{display:none}
-    .pure-hidden-xs{display:none}
-}
-/* pure-hidden-sm */
-@media screen and (min-width:35.5em) and (max-width:47.938em) {
-    .pure-visible-xs{display:none}
-    .pure-visible-md{display:none}
-    .pure-visible-lg{display:none}
-    .pure-visible-xl{display:none}
-    .pure-hidden-sm{display:none}
-}
-/* pure-hidden-md */
-@media screen and (min-width:48em) and (max-width:63.938em) {
-    .pure-visible-xs{display:none}
-    .pure-visible-sm{display:none}
-    .pure-visible-lg{display:none}
-    .pure-visible-xl{display:none}
-    .pure-hidden-md{display:none}
-}
-/* pure-hidden-lg */
-@media screen and (min-width:64em) and (max-width:79.938em) {
-    .pure-visible-xs{display:none}
-    .pure-visible-sm{display:none}
-    .pure-visible-md{display:none}
-    .pure-visible-xl{display:none}
-    .pure-hidden-lg{display:none}
-}
-/* pure-hidden-xl */
-@media screen and (min-width:80em) {
-    .pure-visible-xs{display:none}
-    .pure-visible-sm{display:none}
-    .pure-visible-md{display:none}
-    .pure-visible-lg{display:none}
-    .pure-hidden-xl{display:none}
 }
