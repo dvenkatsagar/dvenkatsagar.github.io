@@ -47,6 +47,14 @@ thumbnail: me
             <p>What I normally do is :</p>
           </div>
           <div class="pure-u-1">
+            <p><i class="fa fa-star"></i> Create websites that are responsive by design and interactive by nature.</p>
+            <p><i class="fa fa-star"></i> Write codes that are simple but can do complex computation.</p>
+            <p><i class="fa fa-star"></i> Involve in projects that can teach something new and valuable.</p>
+            <p><i class="fa fa-star"></i> Learn, Adapt, and share the knowledge that I gained with the world.</p>
+            <p><i class="fa fa-star"></i> Help other developers with their interesting project.</p>
+            <p><i class="fa fa-star"></i> And finally have fun experimenting.</p>
+          </div>
+          <div class="pure-u-1">
             <div class="pure-g">
               <div class="responsive-animation" data-animation-step="1">
                 <div class="device">
@@ -65,14 +73,6 @@ thumbnail: me
     		      </div>
             </div>
           </div>
-          <div class="pure-u-1">
-            <p><i class="fa fa-star"></i> Create websites that are responsive by design and interactive by nature.</p>
-            <p><i class="fa fa-star"></i> Write codes that are simple but can do complex computation.</p>
-            <p><i class="fa fa-star"></i> Involve in projects that can teach something new and valuable.</p>
-            <p><i class="fa fa-star"></i> Learn, Adapt, and share the knowledge that I gained with the world.</p>
-            <p><i class="fa fa-star"></i> Help other developers with their interesting project.</p>
-            <p><i class="fa fa-star"></i> And finally have fun experimenting.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -87,11 +87,16 @@ thumbnail: me
               <div class="pure-u-1 chart-container">
                 <canvas id="skills-chart"></canvas>
               </div>
-              <div class="pure-u-1 abbr">
+              <div class="pure-u-1">
+                <small>Note: Hover over the charts to stop animation</small>
+              </div>
+              <div class="pure-u-1 skills-info">
                 <p><i class="fa fa-star"></i> Server Side - PHP, SQL, Xampp.</p>
-                <p><i class="fa fa-star"></i> Other Web Technologies - Nodejs, MongoDB, NoSQL, Mean, Sails, Hadoop, Mahout.</p>
-                <p><i class="fa fa-star"></i> OS - Open Source Alternatives like Blender, Gimp, Inkscape, Synfig Studios, Pencil, MyPaint, Alchemy.</p>
+                <p><i class="fa fa-star"></i> Other Web Technologies - Nodejs, MongoDB, NoSQL, Mean, Sails, Hadoop (experiments), Mahout (experiments).</p>
                 <p><i class="fa fa-star"></i> ACS - Adobe Creative Suite.</p>
+                <p><i class="fa fa-star"></i> 3D Tools - Maya, 3DS Max, Cinema 4D, Sculptris.</p>
+                <p><i class="fa fa-star"></i> Media Editing - Openshot, Kdenlive, CyberLink PowerDirector, Lightworks, VLMC.</p>
+                <p><i class="fa fa-star"></i> OS - Open Source Alternatives like Blender, Gimp, Inkscape, Synfig Studios, Pencil, MyPaint, Alchemy.</p>
               </div>
             </div>
           </div>
@@ -107,11 +112,13 @@ thumbnail: me
 <script src="{{ site.baseurl }}/lib/js/Chart.min.js"></script>
 <script src="{{ site.baseurl }}/lib/js/jquery.min.js"></script>
 <script type="text/javascript">
+// responsive logo animation
 var duration = 7000, steps = 3, step = 1;
 setInterval( function() {
   document.querySelector( '#about-me .responsive-animation' ).setAttribute( 'data-animation-step', step = ++step > steps ? 1 : step );
 }, duration / steps );
 
+// Skills chart data
 var skills_program = {
   labels: ["C", "C++", "JAVA", "PYTHON", "SHELL SCRIPT"],
   datasets: [
@@ -166,12 +173,13 @@ var options = {
   responsive: true
 };
 
+// Charts initiation
 var charts = {};
 ctx = document.getElementById("skills-chart").getContext("2d");
-var data = $.extend(true,{},skills_program);
-skills_chart = new Chart(ctx).Bar(data, options);
+var skills_data = $.extend(true,{},skills_program);
+skills_chart = new Chart(ctx).Bar(skills_data, options);
 
-
+// Load skills into chart
 function load_skills(main_chart, load_data){
   if (main_chart.datasets[0].bars.length > load_data.labels.length){
     var diff = main_chart.datasets[0].bars.length - load_data.labels.length;
@@ -212,42 +220,46 @@ function load_skills(main_chart, load_data){
   main_chart.update();
 }
 
-var state = 0;
+// Animation settings
 var que = [];
 var interval = null;
+
+// Data Switcher
+function switch_data(chart,skills,label,state){
+  load_skills(chart, skills);
+  $("#skills-label").text(label);
+  que.push(state);
+}
+
 function switcher(i){
   switch(i){
-  case 0 :  load_skills(skills_chart, skills_web);
-            $("#skills-label").text("As a Web Developer");
-            state = 0;
-            que.push(state);
-          break;
-  case 1 : load_skills(skills_chart, skills_media);
-            $("#skills-label").text("As a Media Creator");
-            state = 1;
-            que.push(state);
-          break;
-  case 2 : load_skills(skills_chart, skills_program);
-            $("#skills-label").text("As a Programmer");
-            state = 2;
-            que.push(state);
-          break;
+  case 0 :
+    switch_data(skills_chart, skills_web,"As a Web Developer",0);
+    break;
+  case 1 :
+    switch_data(skills_chart, skills_media,"As a Media Creator",1);
+    break;
+  case 2 :
+    switch_data(skills_chart, skills_program,"As a Programmer",2);
+    break;
   }
 }
 
+// Interval of que animation
 que = [0,1,2];
 interval = setInterval(function(){
   var i = que.shift();
   switcher(i);
-},3000);
+},4000);
 
+// Hover function for interval
 $("#skills-chart").hover(function(){
   clearInterval(interval);
 },function(){
   interval = setInterval(function(){
     var i = que.shift();
     switcher(i);
-  },3000);
+  },4000);
 });
 
 </script>

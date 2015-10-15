@@ -16,8 +16,10 @@ stackoverflow_link: https://www.stackoverflow.com/users/3228518/dvenkatsagar
 disqus_account: dvenkatsagar-github
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+markdown: kramdown
+kramdown:
+  input: GFM
+#redcarpet:
+#  extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 permalink: pretty
 exclude: [vendor]

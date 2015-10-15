@@ -4,10 +4,6 @@
 <title>{% if page.title == "Welcome" %} Sagar D.V {% elsif page.title != "Welcome" %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="Welcome to the home page of Sagar DV.">
 
-<link rel="stylesheet" href="{{ site.baseurl }}/css/fonts.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/lib/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/lib/css/zenburn.css">
-
 <!-- Favicons generated at http://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/favicons/apple-touch-icon-60x60.png">
@@ -29,10 +25,16 @@
 <meta name="msapplication-config" content="{{ site.baseurl }}/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/css/slick.css"/>
-<!-- Add the new slick-theme.css if you want the default styling -->
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/css/slick-theme.css"/>
+<!-- Fonts and Code Highlight CSS -->
+<link rel="stylesheet" href="{{ site.baseurl }}/css/fonts.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/lib/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/lib/css/zenburn.css">
 
+<!-- Slick Carousel CSS -->
+{% if page.nav == "home" %}
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/css/slick-theme.css"/>
+{% endif %}
 
 <!-- PureCss -->
 <link rel="stylesheet" href="{{ site.baseurl }}/lib/css/pure-min.css">
@@ -45,10 +47,12 @@
 <!--<![endif]-->
 <link rel="stylesheet" href="{{ site.baseurl }}/lib/css/grids-responsive-hidden.css">
 
-
 <!-- Animate CSS -->
 <link rel="stylesheet" type="text/css" media="all" href="{{ site.baseurl }}/lib/css/animate.min.css" />
 
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" media="all" href="{{ site.baseurl }}/css/main.css" />
+{% if page.nav == "about" %}
+<link rel="stylesheet" type="text/css" media="all" href="{{ site.baseurl }}/lib/css/responsive-animation.css" />
+{% endif %}
 </head>

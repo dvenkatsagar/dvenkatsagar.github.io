@@ -44,7 +44,7 @@ layout: default
                 </span>
                 {% endif %}
                 on {{ page.date | date: "%B %-d, %Y" }}
-                {% if page.categories != empty %} under {% for category in page.categories limit:1 %}{{ category }}{% endfor %}{% endif %}
+                {% if page.categories != empty %} under {% for category in page.categories %}{% if forloop.last %}{{ category }}{% endif %}{% endfor %}{% endif %}
               </i>
             </p>
           </div>
