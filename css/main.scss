@@ -352,6 +352,7 @@ a {
 }
 
 #about-me{
+	font-weight: lighter;
 	.about-me{
 		text-align: center;
 		.content-panel{
@@ -376,7 +377,16 @@ a {
 		}
 		.skills-info{
 			p {
+				margin: 0.5em auto auto;
 				text-align: justify;
+			}
+			ul{
+				padding-left: 1.2em;
+				text-align: left;
+				line-height: 1.4em;
+				span{
+					color:$orange;
+				}
 			}
 		}
 	}

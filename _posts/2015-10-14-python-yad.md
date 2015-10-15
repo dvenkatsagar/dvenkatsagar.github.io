@@ -2,7 +2,7 @@
 layout:     post
 title:      Python-yad
 date:       2015-10-14 13:53:00
-summary:    Python-yad is a python interface for the yad program which can be used to create simple dialogs on the screen.
+summary:    Python-yad is a interface for the yad program which can be used to create simple dialogs on the screen.
 categories:
  - projects
  - python
@@ -36,7 +36,7 @@ man yad
 
 ## The Python Interface
 
-I created a python interface for this program. It depends on the `yad` program, and the `pexpect` module. You can pretty much achieve the same results as the original. So, to get the calendar dialog as in the previous example, what you got to do is:
+I created a python interface for this program. It depends on the `yad`, and the `pexpect` module. You can pretty much achieve the same results as the original. So, to get the calendar dialog as in the previous example, what you got to do is:
 
 - Create a python script or enter the python shell in the terminal.
 - Import the python-yad module and call the `YAD()` class.
@@ -50,11 +50,12 @@ from yad import YAD
 yad = YAD()
 dates = yad.Calendar(day="14", month="10", year="2015")
 ```
-It will return either the *dates* that were selected in the dialog or `none`. I made a clear documentation and its very easy to understand. You got to check out the `YAD` class for the parameters and examples.
+
+It will return either the *date* that were selected in the dialog or `none`. I made a clear documentation and its very easy to understand. You got to check out the `YAD` class for the parameters and examples.
 
 The working of the interface is very simple. It generates a string with the appropriate parameters when the function is called. This string is then passed to a subprocess that is created with the `pexpect` module and then executed.
 
-So, if you are doing a small project in python on linux and you need a simple GUI interaction, then yad is the best bet, in my opinion. The installation instructions and usage are given in the links below.
+So, if you are doing a small project in python on linux and you need a simple GUI interaction, then yad is the best bet, in my opinion. The installation and usage instructions are given in the links below.
 
 ## Resources
 
