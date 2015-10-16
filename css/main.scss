@@ -42,6 +42,13 @@ body {
   color: Gainsboro;
 	background-size: auto;
 	background-repeat: repeat;
+	font-size: 1.2em;
+	@media screen and (max-width:35.438em) {
+		font-size: 1em;
+		.header{
+			font-size: 2em;
+		}
+	}
 }
 
 .hr-small{
@@ -60,8 +67,8 @@ body {
 		color: $white;
 		font-size: 1.5em;
 		position: fixed;
-		top: 1.5em;
-		left: 1.5em;
+		top: 1em;
+		left: 1em;
 		cursor: pointer;
 		padding: 10px 15px;
 		background-color: $dark;
@@ -76,7 +83,7 @@ body {
       display:block;
     }
 
-    @media screen and (max-width:35.438em){
+    @media screen and (max-width:63.938em) {
       top:0px;
       left:0px;
     }
@@ -143,6 +150,7 @@ a {
 	font-family: "Montserrat", sans-serif;
 	text-align: center;
 	text-transform: uppercase;
+	margin: 0.25em auto;
 }
 
 .article-header{
@@ -215,8 +223,8 @@ a {
 	z-index: 799;
   width:12em;
 	position:fixed;
-	top:5.2em;
-	left:2.25em;
+	top:4.2em;
+	left:1.5em;
 	background-color: #2d2d2d;
 	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
 	border-top-right-radius: 5px;
@@ -264,8 +272,8 @@ a {
     display:block;
   }
 
-  @media screen and (max-width:35.438em){
-    top:2.75em;
+  @media screen and (max-width:63.938em) {
+    top:2.7em;
     left:0px;
   }
 }
@@ -298,11 +306,6 @@ a {
 
 /* Home page */
 #home {
-	#welcome{
-		.header{
-			margin: 0.5em auto;
-		}
-	}
 	.description {
     text-align: center;
     font-weight: normal;
@@ -323,12 +326,12 @@ a {
 
 	#latest-articles{
 		.header{
-			font-size: 1.8em;
+			margin: 0.5em auto;
 		}
 	}
 }
 
-/* Portfolio and Contact*/
+/*Contact details*/
 .contact-details{
 	.name{
 		text-align: center;
@@ -351,6 +354,25 @@ a {
 	}
 }
 
+/* Archive page */
+#archive {
+  .content-panel{
+    margin:1em auto 0.5em;
+  }
+
+	.articles{
+		margin: auto 0.25em;
+	}
+
+	#results-list{
+		display:none;
+	}
+	#search-input{
+		color:black;
+	}
+}
+
+
 #about-me{
 	font-weight: lighter;
 	.about-me{
@@ -363,6 +385,11 @@ a {
 		p{
 			text-align: justify;
 		}
+		ul{
+			margin:0;
+			padding-left: 1em;
+			text-align: justify;
+		}
 	}
 	.skills{
 		text-align: center;
@@ -373,6 +400,7 @@ a {
 			}
 		}
 		.header{
+			font-size: 1.8em;
 			margin: 0.5em auto;
 		}
 		.skills-info{
@@ -392,26 +420,8 @@ a {
 	}
 }
 
-/* Archive page */
-#archive {
-  .content-panel{
-    margin:1em auto 0.5em;
-  }
-	.header{
-    margin: 0.4em auto;
-	}
-
-	#results-list{
-		display:none;
-	}
-	#search-input{
-		color:black;
-	}
-}
-
 /* Single post */
 .single-post{
-
   .content-panel{
     margin:1em auto;
   }
@@ -432,20 +442,15 @@ a {
     text-align: justify;
     margin: auto 1em;
     font-weight: lighter;
-    .article-image{
-      width : 100%;
-			height: auto;
-    }
-
-		ul{
-			li{
-				margin:0.2em auto;
+		line-height: 1.4em;
+    @media screen and (max-width:35.438em) {
+			img {
+				width:100%;
 			}
 		}
-
   }
   .article-footer{
-		margin-top: 2em;
+		margin: 2em auto 0.5em;
     .tags{
       font-weight:normal;
       text-align:center;
@@ -470,7 +475,7 @@ a {
 }
 
 #related-posts,#suggested-posts{
-  margin-top: 1em;
+  margin-top: 1.5em;
   .related-header {
     text-align: center;
 		margin-top: -0.6em;
@@ -514,7 +519,7 @@ a {
 }
 
 #suggested-posts{
-	margin-top: 3em;
+	margin-top: 2.5em;
 	.related-title{
 		margin: 0.5em auto;
 	}

@@ -20,7 +20,7 @@ tags:
 
 ## Reveal.js
 
-Reveal is a javascript framework that helps in creating solid and beautiful presentations on the browser using HTML and CSS. It supports some interesting features and has a lot of plug-ins. The interesting thing that I found about it was that it has a *speaker* view which gives the speaker (the one who is presenting) an overview of all the slides in the presentation. It also shows the speaker the notes that he/she has written for each slide along with the timer. There are other features like exporting to PDF, Markdown support, nested slides, etc.
+Reveal is a javascript framework for creating solid and beautiful presentations on the browser using HTML and CSS. It supports some really good features and has a lot of plug-ins. The interesting thing is that, it has a *speaker* view which gives an overview of all the slides in the presentation. It also shows the speaker the notes that he/she has written for each slide along with the timer. There are other features like exporting to PDF, Markdown support, nested slides, etc.
 
 Here is a live demo taken from the project page :
 
@@ -28,7 +28,7 @@ Here is a live demo taken from the project page :
 
 ## Chart.js
 
-Chart.js is a small library that is capable of drawing different types of interactive charts on the HTML5 Canvas. Here is a simple example taken from the documentation:
+Chart.js is a small library that is capable of drawing different types of interactive charts on the HTML5 Canvas. There are currently 6 charts available which can extended using the API. Here is a simple example taken from the documentation :
 
 <canvas id="chart1" style="width:250px; height:250px; margin:auto; display:block;"></canvas>
 <p style="text-align:center;"><small>Hover over the chart for more information</small></p>
@@ -103,11 +103,13 @@ And here is the sample code :
 </script>
 {% endhighlight %}
 
-It has neat documentation and is very easy to understand. There are other alternatives to this library that you can checkout, like highcharts.js, canvas.js, d3.js which can visualize more complex data but what you will find is that, some of them are free for only non-commercial use and are a little bit difficult to setup.
+It has neat documentation and is very easy to understand. There are other alternatives to this library that you can checkout, like [highcharts.js](http://www.highcharts.com/), [canvas.js](https://www.canvasjs.com), [d3.js](http://www.d3js.org/) which can visualize more complex data but what you will find is that, some of them are free for only non-commercial use and are a little bit difficult to setup.
 
 ## The Plug-in
 
-I developed a plugin that integrates the two libraries mentioned above and was able to achieve some good results. I made a presentation with a detailed documentation on how to install and use it.
+When I was developing a presentation using reveal.js, there was a requirement where I had to add some charts to the slides. I searched online and found out about chart.js. Unfortunately, for some reason, when trying to add a chart by following the given documentation, it just doesn't work. So I fiddled around with it and was able to make it work by only adding an *iframe*. The results were favorable but wasn't consistent when looking at it from different devices. As this method worked, I started experimenting with it and kinda developed a plug-in that integrates the two libraries.
+
+Here is a presentation with the detailed documentation on how to install and use it :
 
 <iframe src="http://dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
