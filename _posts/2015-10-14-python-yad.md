@@ -1,12 +1,11 @@
 ---
 layout:     post
-title:      Python-yad
+title:      Python-Yad
 date:       2015-10-14 13:53:00
-summary:    Python-yad is a interface for the yad program which can be used to create simple dialogs on the screen.
+summary:    A python interface for the yad program which can be used to create simple dialogs on the screen.
 categories:
  - projects
  - python
- - python-yad
 author:     Sagar D.V
 thumbnail:  flask
 tags:

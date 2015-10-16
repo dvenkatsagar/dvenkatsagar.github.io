@@ -22,7 +22,7 @@ layout: default
           </div>
           {% elsif page.thumbnail %}
           <div class="thumb">
-            <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
+            <i class="fa fa-{{ page.thumbnail }} fa-5x"></i>
           </div>
           {% endif %}
         </div>
@@ -34,17 +34,17 @@ layout: default
                 {% if page.author %}
                 by
                 <span class="author">
-                  {% if site.google_plus_link %}
-                  <a href="{{ site.google_plus_link }}">
+                  {% if site.linkedin_link %}
+                  <a href="{{ site.linkedin_link }}">
                   {% endif %}
                     {{ page.author }}
-                  {% if site.google_plus_link %}
+                  {% if site.linkedin_link %}
                   </a>
                   {% endif %}
                 </span>
                 {% endif %}
                 on {{ page.date | date: "%B %-d, %Y" }}
-                {% if page.categories != empty %} under {% for category in page.categories %}{% if forloop.last %}{{ category }}{% endif %}{% endfor %}{% endif %}
+                {% if page.categories != empty %} under {% for category in page.categories %}{% if forloop.last %}{{ category | capitalize }}{% endif %}{% endfor %}{% endif %}
               </i>
             </p>
           </div>
