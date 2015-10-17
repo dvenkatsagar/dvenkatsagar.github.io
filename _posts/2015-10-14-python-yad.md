@@ -17,17 +17,17 @@ tags:
 
 ## The Yad-Dialog
 
-Yad is Linux program that allows the user to create simple GUI Dialogs on the screen using shell scripts. Its a fork of [Zenity](https://help.gnome.org/users/zenity/stable/) with a lot of extended features. For example, a calendar dialog can be bought up by opening the terminal and typing in the following command (assuming yad is installed in the system):
+Yad is Linux program that allows the user to create simple GUI Dialogs on the screen using shell scripts. Its a fork of [Zenity](https://help.gnome.org/users/zenity/stable/) with a lot of extended features. For example, a calendar dialog can be bought up by opening the terminal and typing in the following command (assuming yad is installed in the system) :
 
 ```bash
 yad --calendar --day 14 --month 10 --year 2015
 ```
 
-And you will get something like this:
+And you will get something like this :
 
 <img style="margin:auto;display:block" src="{{ site.baseurl }}/lib/media/yad-calendar.png" />
 
-You should check its `man-pages` for more options:
+You should check its `man-pages` for more options :
 
 ```bash
 man yad
@@ -35,13 +35,13 @@ man yad
 
 ## The Python Interface
 
-I created a python interface for this program. It depends on the `yad`, and the `pexpect` module. You can pretty much achieve the same results as the original. So, to get the calendar dialog as in the previous example, what you got to do is:
+I created a python interface for this program. It depends on the `yad`, and the `pexpect` module. You can pretty much achieve the same results as the original. So, to get the calendar dialog as in the previous example, what you got to do is :
 
 - Create a python script or enter the python shell in the terminal.
 - Import the python-yad module and call the `YAD()` class.
 - And finally call the calendar as `yad.Calendar()`
 
-Here is the sample python code:
+Here is the sample python code :
 
 ```python
 #!/usr/bin/env python
