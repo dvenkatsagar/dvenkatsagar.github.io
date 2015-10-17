@@ -14,9 +14,7 @@ tags:
 
 ## Introduction
 
-Hello everyone, I am Sagar D.V, a developer/web designer, currently doing my Masters in Computers and Information Sciences at Florida State University.
-I'm a techie who loves to experiment with Virtual Reality gaming and WebGL graphics. I did create some projects like Python-yad, Reveal-charts, Speech-to-program Editor.
-Most of the projects that I've done are either plug-ins or interfaces for bigger projects. So if your are interested, you can check out my [portfolio]({{ site.baseurl }}/portfolio/), to find out more. To know more about me, you can check it out [here]({{ site.baseurl }}/about/).
+Hello everyone, I am Sagar D.V, a developer/web designer, currently doing my Masters in Computers and Information Sciences at Florida State University.I'm a techie who loves to experiment with Virtual Reality gaming and WebGL graphics. I did create some projects like Python-yad, Reveal-charts, Speech-to-program Editor.Most of the projects that I've done are either plug-ins or interfaces for bigger projects. So if your are interested, you can check out my [portfolio]({{ site.baseurl }}/portfolio/), to find out more. To know more about me, you can check it out [here]({{ site.baseurl }}/about/).
 
 ## Mission
 
