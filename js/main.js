@@ -1,11 +1,13 @@
 $(document).ready(function(){
 
   $('#home .carousel').slick({
+    dots: true,
+    arrows: false,
     infinite: false,
     speed: 300,
     slidesToShow: 1,
-    accessibility: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    appendDots : $("#carousel-dots")
   });
 
   $('#side-menu li ').off("click").on("click",function(event){
