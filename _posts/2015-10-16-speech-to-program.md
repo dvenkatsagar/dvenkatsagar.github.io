@@ -57,4 +57,5 @@ I've upload a live demo of the editor. If you are interested, please do check it
 ## Resources
 
 - Live Demo : [https://dvenkatsagar.github.io/proj/stp](https://dvenkatsagar.github.io/proj/stp)
+- Source Repository : [https://gitlab.com/dvenkatsagar/speech-editor](https://gitlab.com/dvenkatsagar/speech-editor)
 - Annyang.js : [https://www.talater.com/annyang/](https://www.talater.com/annyang/)
