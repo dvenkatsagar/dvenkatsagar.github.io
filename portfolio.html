@@ -26,7 +26,8 @@ thumbnail: briefcase
       <div class="pure-u-2-5">&nbsp;</div>
       <h1 class="header pure-u-1">{{ page.title }}</h1>
     </div>
-    <div class="pure-g">
+
+    <!--div class="pure-g">
       <div class="pure-u-1 content-panel">
         <div class="pure-g">
           <div class="pure-u-1">
@@ -34,7 +35,51 @@ thumbnail: briefcase
           </div>
         </div>
       </div>
+    </div-->
+
+    <div class="pure-g">
+      {% for post in site.categories['projects'] %}
+        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+        {% if forloop.first %}
+      <div class="pure-u-1">
+        <div class="pure-g">
+          <div class="pure-u-1 content-panel">
+            <div class="articles">
+              <h2 id="{{ this_year }}-ref">{{ this_year }}</h2>
+              <ul>
+        {% endif %}
+                <li>
+                  <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+                  <p>{{ post.summary }}</p>
+                </li>
+                <li>
+                  {% if forloop.index != forloop.length %}
+                    {% if this_year == next_year %}
+                    <hr class="hr-small"/>
+                    {% endif %}
+                  {% endif %}
+                </li>
+        {% if forloop.last %}
+              </ul>
+            </div>
+        {% else %}
+          {% if this_year != next_year %}
+              </ul>
+            </div>
+          </div>
+          <div class="pure-u-1 content-panel">
+            <div class="articles">
+              <h2 id="{{ next_year }}-ref">{{next_year}}</h2>
+              <ul>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
   <div class="pure-u-lg-1-12 pure-u-xl-1-5">&nbsp;</div>
 </div>
