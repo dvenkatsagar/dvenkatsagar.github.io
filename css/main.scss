@@ -37,12 +37,12 @@ html {
 }
 
 body {
-	font-family: 'Ubuntu', serif;
 	background-image: url("../lib/bgs/d23.png");
   color: Gainsboro;
 	background-size: auto;
 	background-repeat: repeat;
 	font-size: 1.2em;
+	font-style: normal;
 	@media screen and (max-width:35.438em) {
 		font-size: 1em;
 		.header{
@@ -147,7 +147,6 @@ a {
 
 .header{
 	font-size:3em;
-	font-family: "Montserrat", sans-serif;
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0.25em auto;
@@ -223,7 +222,7 @@ a {
 	z-index: 799;
   width:12em;
 	position:fixed;
-	top:4.2em;
+	top: 4.1em;
 	left:1.5em;
 	background-color: #2d2d2d;
 	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -328,9 +327,6 @@ a {
 	.carousel-container{
 		.carousel{
 			margin: 0.5em auto;
-			h1{
-				font-family: 'Montserrat', sans-serif;
-			}
 		}
 		.content-panel{
 			margin:auto auto 1.5em;

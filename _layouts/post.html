@@ -119,7 +119,9 @@ layout: default
           <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
         </div>
         {% if forloop.last %}
-        <hr />
+        <div class="pure-u-1">
+          <hr></hr>
+        </div>
         {% endif %}
         {% endfor %}
         {% else %}

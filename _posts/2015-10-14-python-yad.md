@@ -25,7 +25,7 @@ yad --calendar --day 14 --month 10 --year 2015
 
 And you will get something like this :
 
-<img style="margin:auto;display:block" src="{{ site.baseurl }}/lib/media/yad-calendar.png" />
+<img class="pure-img" style="margin:auto;display:block" src="{{ site.baseurl }}/lib/media/yad-calendar.png" />
 
 You should check its `man-pages` for more options :
 
