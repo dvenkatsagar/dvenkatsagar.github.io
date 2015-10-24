@@ -24,7 +24,7 @@ Reveal is a javascript framework for creating solid and beautiful presentations 
 
 Here is a live demo taken from the project page :
 
-<iframe src="http://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe src="https://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Chart.js
 
@@ -103,7 +103,7 @@ And here is the sample code :
 </script>
 {% endhighlight %}
 
-It has neat documentation and is very easy to understand. There are other alternatives to this library that you can checkout, like [highcharts.js](http://www.highcharts.com/), [canvas.js](https://www.canvasjs.com), [d3.js](http://www.d3js.org/) which can visualize more complex data but what you will find is that, some of them are free for only non-commercial use and are a little bit difficult to setup.
+It has neat documentation and is very easy to understand. There are other alternatives to this library that you can checkout, like [highcharts.js](https://www.highcharts.com/), [canvas.js](https://www.canvasjs.com), [d3.js](https://www.d3js.org/) which can visualize more complex data but what you will find is that, some of them are free for only non-commercial use and are a little bit difficult to setup.
 
 ## The Plug-in
 
@@ -111,7 +111,7 @@ When I was developing a presentation using reveal.js, there was a requirement wh
 
 Here is a presentation with the detailed documentation on how to install and use it :
 
-<iframe src="http://dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe src="https://dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Resources
 
