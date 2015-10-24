@@ -67,8 +67,8 @@ body {
 		color: $white;
 		font-size: 1.5em;
 		position: fixed;
-		top: 1em;
-		left: 1em;
+		top: 0em;
+		left: 0em;
 		cursor: pointer;
 		padding: 10px 15px;
 		background-color: $dark;
@@ -82,12 +82,8 @@ body {
     &:hover ~ #side-menu{
       display:block;
     }
-
-    @media screen and (max-width:63.938em) {
-      top:0px;
-      left:0px;
-    }
 	}
+
 	#menu-check:checked ~ #side-menu {
 		display:block;
 	}
@@ -222,8 +218,8 @@ a {
 	z-index: 799;
   width:12em;
 	position:fixed;
-	top: 4.1em;
-	left:1.5em;
+	top:2.77em;
+	left:0px;
 	background-color: #2d2d2d;
 	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
 	border-top-right-radius: 5px;
@@ -270,11 +266,6 @@ a {
   &:hover{
     display:block;
   }
-
-  @media screen and (max-width:63.938em) {
-    top:2.7em;
-    left:0px;
-  }
 }
 
 .carousel-container{
@@ -292,7 +283,6 @@ a {
 		.slick-dots{
 			position:relative;
 			bottom: 0;
-			margin : auto;
 			button{
 				&:before{
 					color: $white;
