@@ -24,7 +24,7 @@ Reveal is a javascript framework for creating solid and beautiful presentations 
 
 Here is a live demo taken from the project page :
 
-<iframe src="lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe src="http://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Chart.js
 
