@@ -1,5 +1,7 @@
 ---
 ---
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic);
 /* Colours */
 $twitter:        #6dabda;
 $linkedin:       #2b77b1;
@@ -42,7 +44,10 @@ body {
 	background-size: auto;
 	background-repeat: repeat;
 	font-size: 1.2em;
-	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+	font-family: "Ubuntu", sans-serif;
 	@media screen and (max-width:35.438em) {
 		font-size: 1em;
 		.header{
@@ -107,6 +112,8 @@ body {
 		animation-duration : 1s;
 
 		p{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
 			text-align:center;
 			a{
 				color: white;
@@ -141,6 +148,12 @@ a {
 	}
 }
 
+.content-panel {
+	background-color: $darker;
+	border-bottom: 5px solid $orange;
+}
+
+
 .header{
 	font-size:3em;
 	text-align: center;
@@ -152,12 +165,6 @@ a {
 	.thumb{
 		text-align:center;
 	}
-}
-
-
-.content-panel {
-	background-color: $darker;
-	border-bottom: 5px solid $orange;
 }
 
 .articles{
@@ -241,7 +248,7 @@ a {
 			text-transform: uppercase;
 			text-decoration: none;
 			color:$white;
-			font-weight: bold;
+			font-weight: 700;
 		}
 
 		&:first-child{
@@ -295,6 +302,10 @@ a {
 			height:auto;
 			width:inherit;
 		}
+		p{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+		}
 		outline: 0;
 	}
 }
@@ -310,7 +321,7 @@ a {
 #home {
 	.description {
     text-align: center;
-    font-weight: normal;
+    font-weight: 400;
 		color:red;
 	}
 
@@ -324,6 +335,10 @@ a {
 	}
 
 	#latest-articles{
+		.article-timestamp{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+		}
 		h1{
 			margin:0.5em auto 0.25em;
 		}
@@ -346,10 +361,12 @@ a {
 	}
 }
 
-#portfolio{
-	.construction-label{
-		text-align: center;
-		font-weight: bold;
+#portfolio,#archive{
+	.articles{
+		ul{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+		}
 	}
 }
 
@@ -373,7 +390,6 @@ a {
 
 
 #about-me{
-	font-weight: lighter;
 	.about-me{
 		text-align: center;
 		.content-panel{
@@ -381,13 +397,15 @@ a {
 				margin: auto 1em;
 			}
 		}
-		p{
+		p,ul{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
 			text-align: justify;
 		}
+
 		ul{
 			margin:0;
 			padding-left: 1em;
-			text-align: justify;
 		}
 	}
 	.skills{
@@ -403,6 +421,10 @@ a {
 			margin: 0.5em auto;
 		}
 		.skills-info{
+			p,ul,small {
+				font-family: "Open Sans",sans-serif;
+				font-weight: 300;
+			}
 			p {
 				margin: 0.5em auto auto;
 				text-align: justify;
@@ -412,7 +434,7 @@ a {
 				text-align: left;
 				line-height: 1.4em;
 				span{
-					font-weight: normal;
+					font-weight: 400;
 				}
 			}
 		}
@@ -429,19 +451,24 @@ a {
 		.header{
 			margin :0.5em auto auto;
 		}
-    .author-details{
-      text-align: center;
-    }
-    .read-time{
-      text-align: center;
-    }
+		.author-details p, .read-time{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+			text-align: center;
+		}
   }
 
   .article-content{
     text-align: justify;
     margin: auto 1em;
-    font-weight: lighter;
 		line-height: 1.4em;
+		h2{
+			font-weight: 300;
+		}
+		p,ul{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+		}
     @media screen and (max-width:35.438em) {
 			img {
 				width:100%;
@@ -451,17 +478,19 @@ a {
   .article-footer{
 		margin: 2em auto 0.5em;
     .tags{
-      font-weight:normal;
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
       text-align:center;
     }
   }
 
   .feedback{
-    font-weight: lighter;
     .fa-heart{
       color:$red;
     }
     p{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
       text-align: center;
     }
   }
@@ -488,10 +517,14 @@ a {
 		}
 	}
 
-  .related-title {
+	.related-title,.related-description{
+		font-family: "Open Sans",sans-serif;
+		font-weight: 300;
     text-align: center;
-    margin: 1em auto auto;
+	}
 
+  .related-title {
+    margin: 1em auto auto;
 		a {
 			color: $orange;
       &:hover {
@@ -501,7 +534,6 @@ a {
 	}
 
   .related-description{
-    text-align: center;
     margin: auto auto 1em;
   }
 
@@ -511,9 +543,17 @@ a {
 
   .previous-next{
     margin: auto 1em;
+		p, small{
+			font-family: "Open Sans",sans-serif;
+			font-weight: 300;
+		}
     .next{
       text-align: right;
     }
+
+		.previous,.next{
+			margin: auto auto 1em;
+		}
   }
 }
 
@@ -530,6 +570,12 @@ a {
 	.header{
 		margin: 0.5em auto auto;
 	}
+
+	.error-text,.menu-links{
+		font-family: "Open Sans",sans-serif;
+		font-weight: 300;
+	}
+	
 	.error-text{
 		margin:auto auto 0.5em;
 	}

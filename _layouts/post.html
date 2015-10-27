@@ -136,7 +136,7 @@ layout: default
                 <div class="previous">
                   {% if page.previous %}
                   <p><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a></p>
-                  <p class="date">Published {{ page.previous.date | date: "%B %-d, %Y" }}</p>
+                  <small class="date">Published {{ page.previous.date | date: "%B %-d, %Y" }}</small>
                   {% endif %}
                 </div>
               </div>
@@ -144,7 +144,7 @@ layout: default
                 <div class="next">
                   {% if page.next %}
                   <p><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a></p>
-                  <p class="date">Published {{ page.next.date | date: "%B %-d, %Y" }}</p>
+                  <small class="date">Published {{ page.next.date | date: "%B %-d, %Y" }}</small>
                   {% endif %}
                 </div>
               </div>
