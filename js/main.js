@@ -3,11 +3,14 @@ $(document).ready(function(){
   $('#home .carousel').slick({
     dots: true,
     arrows: false,
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 1,
     adaptiveHeight: true,
-    appendDots : $("#carousel-dots")
+    appendDots : $("#carousel-dots"),
+    autoplay: true,
+    autoplaySpeed: 5000,
+    fade: true
   });
 
   $('#side-menu li ').off("click").on("click",function(event){

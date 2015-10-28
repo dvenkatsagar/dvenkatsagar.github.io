@@ -25,7 +25,7 @@ The speech to program editor is a small experiment that was done as a group proj
 
 ## The Concept
 
-The concept behind the voice commands is similar to snippets. Snippets are basically small pieces of code that get inserted when you type a keyword. In the same manner, what we did was, we "linked" the pre-formated snippets with the voice commands by using a library known as *annyang.js*. Here is a small example on how to set a voice command :
+The concept behind the voice commands is similar to snippets. Snippets are small pieces of code that get inserted when you type a keyword. In the same manner, what we did was, we "linked" the pre-formated snippets with the voice commands by using a library known as *annyang.js*. Here is a small example on how to set a voice command :
 
 {% highlight html %}
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
@@ -45,7 +45,7 @@ if (annyang) {
 </script>
 {% endhighlight %}
 
-In this manner we were able to get the editor working, and currently support the HTML language only.
+In this manner we were able to get the editor working, and currently, it supports the HTML language only.
 
 ## Limits and Observations
 

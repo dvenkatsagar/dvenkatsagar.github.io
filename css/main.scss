@@ -435,7 +435,7 @@ a {
 				text-align: left;
 				line-height: 1.4em;
 				span{
-					font-weight: 400;
+					font-weight: 700;
 				}
 			}
 		}
@@ -469,6 +469,12 @@ a {
 		p,ul{
 			font-family: "Open Sans",sans-serif;
 			font-weight: 300;
+		}
+
+		.footnotes{
+			ol li p{
+				margin: auto;
+			}
 		}
     @media screen and (max-width:35.438em) {
 			img {
