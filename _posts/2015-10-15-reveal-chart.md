@@ -26,7 +26,7 @@ Here is a live demo taken from the project page :
 
 <iframe src="http://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
-<small>If this is not loading, then click <a href="http://{{post.url}}">here</a></small>
+<small>If this is not loading, then click <a href="http://{{site.baseurl}}/{{page.url}}">here</a></small>
 
 ## Chart.js
 
