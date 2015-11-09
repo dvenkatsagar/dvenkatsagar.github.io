@@ -24,7 +24,7 @@ Reveal is a framework for creating solid and beautiful presentations on the brow
 
 Here is a live demo taken from the project page :
 
-<iframe src="https://dvenkatsagar.github.io/redirect.html?query=http://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src="https://dvenkatsagar.github.io/redirect.html?query=http://lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Chart.js
 
