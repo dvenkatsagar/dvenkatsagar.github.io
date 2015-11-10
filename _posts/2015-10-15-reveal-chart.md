@@ -22,11 +22,13 @@ tags:
 
 Reveal is a framework for creating solid and beautiful presentations on the browser using HTML, CSS, and Javascript. It supports some really good features and has a lot of plug-ins. The interesting thing is that, it has a *speaker* view which gives an overview of all the slides in the presentation. It also shows the speaker the notes that he/she has written for each slide along with the timer. There are other features like exporting to PDF, Markdown support, nested slides, etc.
 
-Here is a live demo taken from the project page :
+Here is a link to the demo taken from the project page:
 
-<iframe src="https://www.google.com/webhp?#q=http://lab.hakim.se/reveal-js/#/&btnI=I" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<blockquote class="embedly-card" data-card-key="7963f8a3cd1148b29bfb40017afd3894" data-card-chrome="0" data-card-controls="0" data-card-theme="dark"><h4><a href="http://lab.hakim.se/reveal-js/#/">reveal.js - The HTML Presentation Framework</a></h4><p>The HTML Presentation Framework reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do. Slides can be nested inside of each other.</p></blockquote>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
-<p style="text-align:center;"><small>If this presentation is not loading, then remove the "https" from the address bar.</small></p>
+<!--iframe src="//lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe-->
+<!--p style="text-align:center;"><small>If this presentation is not loading, then remove the "https" from the address bar.</small></p-->
 
 ## Chart.js
 
