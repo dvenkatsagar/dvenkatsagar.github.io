@@ -22,9 +22,9 @@ tags:
 
 Reveal is a framework for creating solid and beautiful presentations on the browser using HTML, CSS, and Javascript. It supports some really good features and has a lot of plug-ins. The interesting thing is that, it has a *speaker* view which gives an overview of all the slides in the presentation. It also shows the speaker the notes that he/she has written for each slide along with the timer. There are other features like exporting to PDF, Markdown support, nested slides, etc.
 
-Here is a link to the demo taken from the project page:
+Here is a demo taken from the project page:
 
-<iframe src="https://dvenkatsagar.github.io/prez/revealjs.html" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe src="//dvenkatsagar.github.io/prez/revealjs.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Chart.js
 
@@ -111,7 +111,7 @@ When I was developing a presentation using reveal.js, there was a requirement wh
 
 Here is a presentation with the detailed documentation on how to install it and use it :
 
-<iframe src="https://dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
+<iframe src="//dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Resources
 
