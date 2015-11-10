@@ -24,11 +24,7 @@ Reveal is a framework for creating solid and beautiful presentations on the brow
 
 Here is a link to the demo taken from the project page:
 
-<blockquote class="embedly-card" data-card-key="7963f8a3cd1148b29bfb40017afd3894" data-card-chrome="0" data-card-controls="0" data-card-theme="dark"><h4><a href="http://lab.hakim.se/reveal-js/#/">reveal.js - The HTML Presentation Framework</a></h4><p>The HTML Presentation Framework reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do. Slides can be nested inside of each other.</p></blockquote>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-
-<!--iframe src="//lab.hakim.se/reveal-js/#/" style="width:100%; height:500px;border:1px solid black;"></iframe-->
-<!--p style="text-align:center;"><small>If this presentation is not loading, then remove the "https" from the address bar.</small></p-->
+<iframe src="https://dvenkatsagar.github.io/prez/revealjs.html" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
 ## Chart.js
 
