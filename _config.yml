@@ -3,11 +3,11 @@ email: dvenkatsagar@gmail.com
 author_name: Sagar DV
 baseurl: ""
 url: "https://dvenkatsagar.github.io"
-#google_analytics: ""
+google_analytics: "UA-70428717-1"
 post_limit: 5
 
 # Social usernames/URLs
-twitter_username: "dvenkatsagar"
+twitter_username: dvenkatsagar
 facebook_username: dvenkatsagar
 git_username:  dvenkatsagar
 linkedin_link: https://www.linkedin.com/in/dvenkatsagar
