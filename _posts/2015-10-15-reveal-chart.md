@@ -6,7 +6,6 @@ summary:    A plugin that integrates Chart.js with Reveal.js.
 categories:
  - projects
  - web
- - reveal
 author:     Sagar D.V
 thumbnail:  pie-chart
 tags:

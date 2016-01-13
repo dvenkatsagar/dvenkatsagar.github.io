@@ -6,7 +6,6 @@ summary:    A text editor that takes in voice commands and gives out programmati
 categories:
  - projects
  - web
- - speech-recognition
 author:     Sagar D.V
 thumbnail:  pencil-square-o
 tags:
