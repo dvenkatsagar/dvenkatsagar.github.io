@@ -7,9 +7,9 @@ google_analytics: "UA-70428717-1"
 post_limit: 5
 
 # Social usernames/URLs
-twitter_username: dvenkatsagar
-facebook_username: dvenkatsagar
-git_username:  dvenkatsagar
+twitter_link: https://www.twitter.com/dvenkatsagar
+facebook_link: https://www.facebook.com/dvenkatsagar
+git_link: https://gitlab.com/dvenkatsagar
 linkedin_link: https://www.linkedin.com/in/dvenkatsagar
 google_plus_link: https://plus.google.com/+SagarDwibhashyam
 stackoverflow_link: https://www.stackoverflow.com/users/3228518/dvenkatsagar
