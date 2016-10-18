@@ -112,6 +112,12 @@ Here is a presentation with the detailed documentation on how to install it and 
 
 <iframe src="//dvenkatsagar.github.io/prez/reveal-chart.html#/" style="width:100%; height:500px;border:1px solid black;"></iframe>
 
+----
+
+**Update 1** : Reveal-chart has been deprecated, please use the chart module in revealjs-plugin. link : https://github.com/rajgoel/reveal.js-plugins
+
+----
+
 ## Resources
 
 - Reveal-Chart : [https://gitlab.com/dvenkatsagar/reveal-chart](https://gitlab.com/dvenkatsagar/reveal-chart)
