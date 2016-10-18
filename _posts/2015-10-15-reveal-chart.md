@@ -114,7 +114,7 @@ Here is a presentation with the detailed documentation on how to install it and 
 
 ----
 
-**Update 1** : Reveal-chart has been deprecated, please use the chart module in revealjs-plugin. link : https://github.com/rajgoel/reveal.js-plugins
+**Update 1** : Reveal-chart has been deprecated, please use the chart module in revealjs-plugin. link : <a href="https://github.com/rajgoel/reveal.js-plugins">https://github.com/rajgoel/reveal.js-plugins</a>
 
 ----
 
