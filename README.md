@@ -1,2 +1,2 @@
 # dvenkatsagar.github.io
-The project is will always be under construction.
+The project will always be under construction.
