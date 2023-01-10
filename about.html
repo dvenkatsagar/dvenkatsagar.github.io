@@ -41,8 +41,8 @@ thumbnail: me
       <div class="pure-u-1 content-panel">
         <div class="pure-g">
           <div class="pure-u-1">
-            <p>Hi, I'm Sagar, a developer/designer based in Florida, USA who has done his Masters in Computers and Information Sciences at Florida State University.
-              A techie by nature who kinda crashes his laptop on weekly basis by writing simple codes which do crazy things.
+            <p>Hi, I'm Sagar, a developer/designer based in Florida, USA who has done his Masters in Computers and
+              Information Sciences at Florida State University.
             </p>
             <p>What I normally do is :</p>
           </div>
@@ -53,26 +53,33 @@ thumbnail: me
               <li>Involve in projects that can teach me something new and valuable.</li>
               <li>Learn, Adapt, and share the knowledge that I gained with the world.</li>
               <li>Help other developers with their interesting projects.</li>
-              <li>And finally have fun.</li>
+              <li>having fun doing all of the above.</li>
             </ul>
+            <br />
           </div>
           <div class="pure-u-1">
             <div class="pure-g pure-hidden-xs pure-hidden-sm">
               <div class="responsive-animation pure-u-1" data-animation-step="1">
                 <div class="device">
-      				    <div class="phone-home-button"></div>
-      				    <div class="tablet-home-button"></div>
-      				    <div class="screen-stand">
+                  <div class="phone-home-button"></div>
+                  <div class="tablet-home-button"></div>
+                  <div class="screen-stand">
                     <div class="leg"></div>
                     <div class="foot"></div>
                   </div>
-      				    <div class="display pure-g">
-      					    <div class="slide1 pure-u-1"><div><em>desktops</em></div></div>
-      					    <div class="slide2 pure-u-1"><div><em>tablets</em></div></div>
-      					    <div class="slide3 pure-u-1"><div><em>phones</em></div></div>
-      				    </div>
-      			    </div>
-    		      </div>
+                  <div class="display pure-g">
+                    <div class="slide1 pure-u-1">
+                      <div><em>Desktops</em></div>
+                    </div>
+                    <div class="slide2 pure-u-1">
+                      <div><em>Tablets</em></div>
+                    </div>
+                    <div class="slide3 pure-u-1">
+                      <div><em>Phones</em></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,17 +92,21 @@ thumbnail: me
           <h1 class="pure-u-1">MY SKILLS</h1>
           <div class="pure-u-1">
             <div class="pure-g">
-              <h2 class="pure-u-1" id="skills-label">As a Programmer</h2>
+              <h2 class="pure-u-1" id="skills-label"></h2>
               <div class="pure-u-1 chart-container">
                 <canvas id="skills-chart"></canvas>
               </div>
               <div class="pure-u-1 skills-info">
                 <small>Note: Hover over the charts to stop animation</small>
-                <p>For more information on my skills and the projects that I worked on, you can check out my LinkedIn Profile here :</p>
-                <br/>
-                <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-                <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="dvenkatsagar"><a class="LI-simple-link" href='https://www.linkedin.com/in/dvenkatsagar?trk=profile-badge'>Sagar Dwibhashyam</a></div>
-                <br/>
+                <p>For more information on my skills and the projects that I worked on, you can check out my LinkedIn
+                  Profile here :</p>
+                <br />
+                <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async
+                  defer></script>
+                <div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US"
+                  data-type="vertical" data-theme="dark" data-vanity="dvenkatsagar"><a class="LI-simple-link"
+                    href='https://www.linkedin.com/in/dvenkatsagar?trk=profile-badge'>Sagar D V</a></div>
+                <br />
               </div>
             </div>
           </div>
@@ -111,156 +122,148 @@ thumbnail: me
 <script src="{{ site.baseurl }}/lib/js/Chart.min.js"></script>
 <script src="{{ site.baseurl }}/lib/js/jquery.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-  // responsive logo animation
-  var duration = 7000, steps = 3, step = 1;
-  setInterval( function() {
-    document.querySelector( '#about-me .responsive-animation' ).setAttribute( 'data-animation-step', step = ++step > steps ? 1 : step );
-  }, duration / steps );
+  $(document).ready(function () {
+    // responsive logo animation
+    var duration = 7000, steps = 3, step = 1;
+    setInterval(function () {
+      document.querySelector('#about-me .responsive-animation').setAttribute('data-animation-step', step = ++step > steps ? 1 : step);
+    }, duration / steps);
 
-  // Skills chart data
-  var skills_program = {
-    labels: ["C", "C++", "JAVA", "PYTHON", "OTHER"],
-    datasets: [
-      {
-        label: "Programming Skills",
-        fillColor: "rgba(151,187,205,0.5)",
-        strokeColor: "rgba(151,187,205,0.8)",
-        highlightFill: "rgba(151,187,205,0.75)",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: [8,8,7.5,9.5,8]
+    // Chart related functions
+    // Load skills into chart
+    function load_skills(main_chart, load_data) {
+      if (main_chart.data.labels.length > 0) {
+        for (var i = 0; i < load_data.data.labels.length; i++) {
+          main_chart.data.labels[i] = load_data.data.labels[i];
+          main_chart.data.datasets[0].data[i] = load_data.data.datasets[0].data[i];
+        }
+
+        main_chart.data.datasets[0].backgroundColor = load_data.data.datasets[0].backgroundColor;
+        main_chart.data.datasets[0].borderColor = load_data.data.datasets[0].borderColor;
+        main_chart.data.datasets[0].hoverBackgroundColor = load_data.data.datasets[0].hoverBackgroundColor;
+        main_chart.data.datasets[0].hoverBorderColor = load_data.data.datasets[0].hoverBorderColor;
+
+      } else {
+        main_chart.data = load_data.data;
       }
-    ]
-  }
-
-  var skills_web = {
-    labels: ["HTML5", "CSS3", "JS", "SERVER SIDE","NOSQL"],
-    datasets: [
-      {
-        label: "Web Development Skills",
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data: [9.5, 9.5, 9.5, 8, 8]
-      }
-    ]
-  }
-
-  var skills_media = {
-    labels: ["Adobe CS","3D Tools","Media Editing","Game Design","OS"],
-    datasets: [
-      {
-        label: "Media Creation Skills",
-        fillColor: "rgba(204,255,153,0.5)",
-        strokeColor: "rgba(204,255,153,0.8)",
-        highlightFill: "rgba(204,255,153,0.75)",
-        highlightStroke: "rgba(204,255,153,1)",
-        data: [8,7,8,7,8.5]
-      }
-    ]
-  }
-
-  var options = {
-    scaleLineColor: "rgba(128,128,128,0.5)",
-    scaleFontColor: "#888",
-    scaleFontSize : 13,
-    scaleOverride: true,
-    scaleSteps: 5,
-    scaleStepWidth: 2,
-    scaleStartValue: 0,
-    scaleGridLineColor : "rgba(0,0,0,0.2)",
-    responsive: true
-  };
-
-  // Charts initiation
-  var charts = {};
-  ctx = document.getElementById("skills-chart").getContext("2d");
-  var skills_data = $.extend(true,{},skills_program);
-  skills_chart = new Chart(ctx).Bar(skills_data, options);
-
-  // Load skills into chart
-  function load_skills(main_chart, load_data){
-    if (main_chart.datasets[0].bars.length > load_data.labels.length){
-      var diff = main_chart.datasets[0].bars.length - load_data.labels.length;
-      for(var i = 0; i < diff; i++){
-        main_chart.removeData();
-      }
-    }else if (main_chart.datasets[0].bars.length < load_data.labels.length) {
-      var diff = load_data.labels.length - main_chart.datasets[0].bars.length;
-      for(var i = 0; i < diff; i++){
-        main_chart.addData([0],"");
-      }
+      main_chart.update();
+      return false;
     }
 
-    for(var i = 0; i < load_data.labels.length; i++){
-      // update value of bar
-      main_chart.datasets[0].bars[i].value = load_data.datasets[0].data[i];
-      // update label of bar
-      main_chart.datasets[0].bars[i].label = load_data.labels[i];
-
-      // update fill color of bar
-      main_chart.datasets[0].bars[i].fillColor = load_data.datasets[0].fillColor;
-      // update hightlight fill of bar
-      main_chart.datasets[0].bars[i].highlightFill = load_data.datasets[0].highlightFill;
-      // update hightlight stroke of bar
-      main_chart.datasets[0].bars[i].highlightStroke = load_data.datasets[0].highlightStroke;
-      // update stroke color of bar
-      main_chart.datasets[0].bars[i].strokeColor = load_data.datasets[0].strokeColor;
-      // update datasetLabel of bar
-      main_chart.datasets[0].bars[i].datasetLabel = load_data.datasets[0].label;
-      // update scale label of bar
-      main_chart.scale.xLabels[i] = load_data.labels[i];
+    // Data Switcher
+    function switch_data(state, chart, label, skills) {
+      load_skills(chart, skills);
+      $("#skills-label").text(label);
+      que.push(state);
+      return false;
     }
 
-    // update dataset label, fillcolor and stroke color
-    main_chart.datasets[0].label = load_data.datasets[0].label;
-    main_chart.datasets[0].fillColor = load_data.datasets[0].fillColor;
-    main_chart.datasets[0].strokeColor = load_data.datasets[0].strokeColor;
-    main_chart.update();
-  }
-
-  // Animation settings
-  var que = [];
-  var interval = null;
-
-  // Data Switcher
-  function switch_data(chart,skills,label,state){
-    load_skills(chart, skills);
-    $("#skills-label").text(label);
-    que.push(state);
-  }
-
-  function switcher(i){
-    switch(i){
-    case 0 :
-      switch_data(skills_chart, skills_web,"As a Web Developer",0);
-      break;
-    case 1 :
-      switch_data(skills_chart, skills_media,"As a Media Creator",1);
-      break;
-    case 2 :
-      switch_data(skills_chart, skills_program,"As a Programmer",2);
-      break;
+    function switcher(i) {
+      switch (i) {
+        case 0:
+          return switch_data(0, skills_chart, "As a Web Developer", {
+            data: {
+              labels: ["HTML5", "CSS3", "JS", "SERVER SIDE", "NOSQL"],
+              datasets: [
+                {
+                  backgroundColor: "rgba(220,220,220,0.5)",
+                  borderColor: "rgba(220,220,220,0.8)",
+                  hoverBackgroundColor: "rgba(220,220,220,0.75)",
+                  hoverBorderColor: "rgba(220,220,220,1)",
+                  data: [9.5, 9.5, 9.5, 8, 8]
+                }
+              ]
+            }
+          });
+        case 1:
+          return switch_data(1, skills_chart, "As a Media Creator", {
+            data: {
+              labels: ["Adobe CS", "3D Tools", "Media Editing", "Game Design", "OS"],
+              datasets: [
+                {
+                  backgroundColor: "rgba(204,255,153,0.5)",
+                  borderColor: "rgba(204,255,153,0.8)",
+                  hoverBackgroundColor: "rgba(204,255,153,0.75)",
+                  hoverBorderColor: "rgba(204,255,153,1)",
+                  data: [8, 7, 8, 7, 8.5]
+                }
+              ]
+            }
+          });
+        case 2:
+          return switch_data(2, skills_chart, "As a Programmer", {
+            data: {
+              labels: ["C", "C++", "JAVA", "PYTHON", "OTHER"],
+              datasets: [
+                {
+                  backgroundColor: "rgba(151,187,205,0.5)",
+                  borderColor: "rgba(151,187,205,0.8)",
+                  hoverBackgroundColor: "rgba(151,187,205,0.75)",
+                  hoverBorderColor: "rgba(151,187,205,1)",
+                  data: [8, 8, 7.5, 9.5, 8]
+                }
+              ]
+            }
+          });
+      }
+      return false;
     }
-  }
 
-  // Interval of que animation
-  que = [0,1,2];
-  interval = setInterval(function(){
-    var i = que.shift();
-    switcher(i);
-  },4000);
+    // Chart settings
+    var scaleOptions = {
+      border: {
+        color: 'rgba(128,128,128,0.5)'
+      },
+      grid: {
+        color: 'rgba(0,0,0,0.2)',
+        borderColor: 'rgba(0,0,0,0.2)',
+        tickColor: 'rgba(0,0,0,0.2)'
+      },
+      ticks: {
+        color: '#888',
+        font: {
+          size: 13
+        }
+      }
+    };
 
-  // Hover function for interval
-  $("#skills-chart").hover(function(){
-    clearInterval(interval);
-  },function(){
-    interval = setInterval(function(){
+    var chartOptions = {
+      type: 'bar',
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: scaleOptions,
+          y: scaleOptions
+        }
+      }
+    };
+
+    // Charts initiation
+    const ctx = document.getElementById('skills-chart');
+    var skills_chart = new Chart(ctx, chartOptions);
+
+    // Animation settings
+    var que = [0, 1];
+    // initial state
+    switcher(2);
+    var interval = setInterval(function () {
       var i = que.shift();
       switcher(i);
-    },4000);
-  });
+    }, 4000);
 
-});
+    // Hover function for interval
+    $("#skills-chart").hover(function () {
+      clearInterval(interval);
+    }, function () {
+      interval = setInterval(function () {
+        var i = que.shift();
+        switcher(i);
+      }, 4000);
+    });
+
+  });
 </script>

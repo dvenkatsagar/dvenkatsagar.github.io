@@ -98,12 +98,13 @@ thumbnail: home
           <div class="pure-u-1">
             <ul class="articles-list">
               {% if site.posts.size != 0 %}
-                {% for post in site.posts | limit: site.post_limit %}
+              {% for post in site.posts limit:site.post_limit %}
               <li>
                 <p><a class="article-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                <small class="article-timestamp">{{ post.date | date: "%B %-d, %Y" }}</small></p>
+                  <small class="article-timestamp">{{ post.date | date: "%B %-d, %Y" }}</small>
+                </p>
               </li>
-                {% endfor %}
+              {% endfor %}
               <li>
                 <p><i><a href="{{ site.baseurl }}/archive/">more...</a></i></p>
               </li>
